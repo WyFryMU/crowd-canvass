@@ -1,3 +1,14 @@
-# crowd-canvass
+# GitHub Repo for COSC Senior Design Project
+## Crowd Canvass Web App
+### Authors
+Shayne Burns
+Wylie Frydrychowicz
+Charlie Irmiger
+Max Rothweiler
+Hannibal Santiago
 
-# Senior Design Project for Crowd Canvass
+## Info/Links
+https://crowdcanvass.web.app
+https://crowdcanvass.firebaseapp.com
+
+We are currently hosting this through Google's firebase service which is free
