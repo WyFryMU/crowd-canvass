@@ -2,8 +2,8 @@
 ## Crowd Canvass Web App
 ### Authors
 - Shayne Burns
+- Ramzi Carter
 - Wylie Frydrychowicz
-- Charlie Irmiger
 - Max Rothweiler
 - Hannibal Santiago
 
