@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-    <html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <title>Account Main Page After Sign In</title>        
+     <link rel="stylesheet" href="accountMainPageAfterSignIn.css">
+</head>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Account Main Page After Sign In</title>
-        
-        <link rel="stylesheet" href="accountMainPageAfterSignIn.css">
-    </head>
+<body>
+	<script>
+	window.onload = function () {
+		var account = document.getElementById("account");
+		var home = document.getElementById("home");
+		var finances = document.getElementById("finances");
+		console.log(account);
+	
+		account.onclick = function() {
+			window.location.href = "accountManage.html";
+		}
+		home.onclick = function() {
+			window.location.href = "accountMainPageAfterSignIn.html";
+		}
+		finances.onclick = function() {
+			window.location.href = "financePage.html";
+		}
+	}
+	</script>
 
-    <body>
+
+
         <div data-layer="f2d16d47-5119-4c95-8734-576d03a526ae" class="accountMainPageAfterSignIn">
 		<div data-layer="a2d6733a-b522-47dd-ab44-abbe2c1ea2d6" class="rectangle33"></div>
         <div data-layer="17f05665-596b-422d-90d6-01279321d3ee" class="rectangle34"></div>
@@ -31,19 +50,16 @@
         <div data-layer="51f56e97-63f4-42cb-814e-29cd2d48e265" class="collectPayments">Collect Payments</div>
         <div data-layer="54e496a8-dbe7-47d4-a54e-c6da7934c348" class="eventsWithinYourArea">Events within your area</div>
         <div data-layer="10d4f149-fc1b-4613-aeaa-54572e2b189a" class="asAnOrganizer">As An Organizer</div>
-        <div data-layer="6a33a2eb-8e85-4c50-b281-d44beeb44ee4" class="home">Home</div>
+        <div data-layer="6a33a2eb-8e85-4c50-b281-d44beeb44ee4" class="home" id="home">Home</div>
         <div data-layer="3f4f0601-c243-4a77-81dc-bc75f695f3bb" class="asAVolunteer">As A Volunteer</div>
-        <div data-layer="0ff7ddbd-b602-4bda-8fe8-146807b5e92f" class="finances"><a href="financePage.html">Finances</a></div>
+        <div data-layer="0ff7ddbd-b602-4bda-8fe8-146807b5e92f" class="finances" id="finances">Finances</div>
         <div data-layer="fe228b5b-ca7c-4c1f-bdb5-f35d49a01759" class="analysis"><a href="analysisPage.html">Analysis</a></div>
-        <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx"><a href="accountManage.html">Account XXX</a></div>
+        <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx" id="account">Account XXX</div>
         <div data-layer="92a03d54-bd41-4aa3-a153-239c12060ce3" class="accountMainPageAfterSignIn938344b19eb8"></div>
         <div data-layer="d2991f16-8256-4731-a4a7-07759fa54d5e" class="payVolunteers">Pay Volunteers</div>
-        <div data-layer="8d0e8581-227d-4a40-9d77-fedd50ae5bd7" class="createACommunityServiceEvent"><a href="createAServiceEvent.html">Create A Community<br />     Service Event</a></div>
+        <div data-layer="8d0e8581-227d-4a40-9d77-fedd50ae5bd7" class="createACommunityServiceEvent"><a href="createAServiceEvent.html">Create A Community<br/>Service Event</a></div>
         <div data-layer="59664ca1-601f-4d96-a377-b443c3a14c59" class="createACanvassEvent"><a href="createACanvassEvent.html">Create A Canvass Event</a></div>
 </div>
-
-
     
-    </body>
-    </html>
-            
+</body>
+/html>            
