@@ -28,6 +28,38 @@
     </head>
 
     <body>
+		<script>
+		window.onload = function () {
+			var analysis = document.getElementById("analysis");
+			var home = document.getElementById("home");
+			var finances = document.getElementById("finances");
+			var login = document.getElementById("login");
+			var createACanvassevent = document.getElementById("createACanvassevent");
+			var createAcommunityserviceEvent = document.getElementById("createAcommunityserviceEvent");
+			//console.log(account);
+		
+			home.onclick = function() {
+				window.location.href = "accountMainPageAfterSignIn.html";
+			}
+			finances.onclick = function() {
+				window.location.href = "financePage.html";
+			}
+			analysis.onclick = function() {
+				window.location.href = "analysisPage.html";
+			}
+			login.onclick = function() {
+				window.location.href = "signUpsignIn.html";
+			}
+			createACanvassevent.onclick = function() {
+				window.location.href = "createACanvassEvent.html";
+			}
+			createAcommunityserviceEvent.onclick = function() {
+				window.location.href = "createAServiceEvent.html";
+			}
+		}
+		</script>
+	
+	
 	<script>
       document.addEventListener('DOMContentLoaded', function() {
         const loadEl = document.querySelector('#load');
@@ -75,10 +107,10 @@
         <div data-layer="400a7952-4c39-442f-9e50-0745129c3e0f" class="rectangle6"></div>
         <div data-layer="014ff19e-ff57-495b-b9ed-e597bed292d6" class="rectangle7"></div>
         <div data-layer="2af61460-23c8-46d8-8330-f271cea8baf0" class="rectangle8"></div>
-        <div data-layer="0e202b29-5d3a-4f17-9ecf-d48e492fc412" class="login"><a href="signUpsignIn.html">LOGIN</a></div>
-        <div data-layer="6f0e247c-706c-4d85-9fcf-c344a93d71ef" class="home">Home</div>
-        <div data-layer="5196591f-0e4f-42a0-9c92-461153b316b7" class="analysis">Analysis</div>
-        <div data-layer="6efb73a6-fa03-48b5-83d5-99f26e44db62" class="finances">Finances</div>
+        <div data-layer="0e202b29-5d3a-4f17-9ecf-d48e492fc412" class="login" id="login">LOGIN</div>
+        <div data-layer="6f0e247c-706c-4d85-9fcf-c344a93d71ef" class="home" id="home">Home</div>
+        <div data-layer="5196591f-0e4f-42a0-9c92-461153b316b7" class="analysis" id="analysis">Analysis</div>
+        <div data-layer="6efb73a6-fa03-48b5-83d5-99f26e44db62" class="finances" id="finances">Finances</div>
         <div data-layer="f361954d-be19-42a9-96e4-4bc240191765" class="rectangle9"></div>
         <div data-layer="342b9e6f-987b-4f77-b737-1b961933d68c" class="component11">
 		<svg data-layer="daa4fd01-e8c5-49d3-ac9a-831a12a3ebd8" preserveAspectRatio="none" viewBox="0 0 115.99710083007812 113.86627197265625" class="path1"><path d="M 58.17688369750977 0 L 115.9971008300781 113.699462890625 L 0 113.8662872314453 L 58.17688369750977 0 Z"  /></svg>
@@ -95,8 +127,8 @@
             <svg data-layer="29b0c436-b0e5-46bd-b71c-958d63ebc469" preserveAspectRatio="none" viewBox="-0.75 -0.75 491.402587890625 250.32012939453125" class="path77"><path d="M 77.30989074707031 0 L 406.5927429199219 0 C 449.289794921875 0 483.9026184082031 37.57965850830078 483.9026184082031 83.93651580810547 C 483.9026184082031 83.93651580810547 483.9026184082031 107.2324371337891 483.9026184082031 124.7192077636719 C 483.9026184082031 142.2059783935547 483.9026184082031 153.8836212158203 483.9026184082031 153.8836212158203 C 483.9026184082031 200.240478515625 449.289794921875 237.8201293945313 406.5927429199219 237.8201293945313 C 406.5927429199219 237.8201293945313 325.7929992675781 227.3633117675781 243.4722900390625 227.3633117675781 C 161.1515655517578 227.3633117675781 77.30989074707031 237.8201293945313 77.30989074707031 237.8201293945313 C 34.61281585693359 237.8201293945313 0 200.240478515625 0 153.8836212158203 L 0 83.93651580810547 C 0 37.57965850830078 34.61281585693359 0 77.30989074707031 0 Z"  /></svg>
 	
 </div>
-        <div data-layer="3902a861-dc62-4534-a818-26e9dab5372a" class="createACanvassevent">Create a Canvass<br />Event</div>
-        <div data-layer="c8e77d38-5174-4d48-96bf-48fa2a2cc1b7" class="createAcommunityserviceEvent">Create a<br />Community<br />Service Event</div>
+        <div data-layer="3902a861-dc62-4534-a818-26e9dab5372a" class="createACanvassevent" id=createACanvassevent>Create a Canvass<br />Event</div>
+        <div data-layer="c8e77d38-5174-4d48-96bf-48fa2a2cc1b7" class="createAcommunityserviceEvent" id=createAcommunityserviceEvent>Create a<br />Community<br />Service Event</div>
         <div data-layer="c6ee7377-a326-452a-8f27-12a56cff2efb" class="communityvolunteerportal">Community<br />Volunteer<br />Portal</div>
         <svg data-layer="99d66e1a-7541-410d-bf1d-4b1b4c89144e" preserveAspectRatio="none" viewBox="-0.75 -0.75 950.9207763671875 659.448486328125" class="path78"><path d="M 150.7240600585938 0 L 792.69677734375 0 C 875.9393310546875 0 943.4207763671875 102.2289505004883 943.4207763671875 228.3347473144531 C 943.4207763671875 228.3347473144531 943.4207763671875 291.7073059082031 943.4207763671875 339.2770080566406 C 943.4207763671875 386.8467712402344 943.4207763671875 418.61376953125 943.4207763671875 418.61376953125 C 943.4207763671875 544.7195434570313 875.9393310546875 646.948486328125 792.69677734375 646.948486328125 C 792.69677734375 646.948486328125 635.1689453125 618.5025024414063 474.6757202148438 618.5025024414063 C 314.1825256347656 618.5025024414063 150.7240600585938 646.948486328125 150.7240600585938 646.948486328125 C 67.4814453125 646.948486328125 0 544.7195434570313 0 418.61376953125 L 0 228.3347473144531 C 0 102.2289505004883 67.4814453125 0 150.7240600585938 0 Z"  /></svg>
         <div data-layer="ddf85733-ac3b-4805-ad9a-245cc256d0d9" class="image5"></div>
