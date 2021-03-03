@@ -49,7 +49,7 @@
 
 }
 
-.createAnAccount .rectangle25 {
+.createAnAccount .rectangle25{
     position: absolute;
       box-sizing: border-box;
       -ms-transform: rotate(0.00deg);
@@ -134,6 +134,7 @@
     height: 87.00px;
     left: 661.00px;
     top: 317.00px;
+    font-size: 87px;
 
 }
 
@@ -178,6 +179,7 @@
     height: 88.00px;
     left: 661.00px;
     top: 547.00px;
+    font-size: 87px;
 
 }
 
@@ -222,6 +224,7 @@
     height: 95.00px;
     left: 661.00px;
     top: 773.00px;
+    font-size: 87px;
 
 }
 
@@ -266,6 +269,7 @@
     height: 104.00px;
     left: 661.00px;
     top: 979.00px;
+    font-size: 87px;
 
 }
 
@@ -310,6 +314,7 @@
     height: 105.00px;
     left: 661.00px;
     top: 1228.00px;
+    font-size: 87px;
 
 }
 
@@ -354,6 +359,7 @@
     height: 105.00px;
     left: 661.00px;
     top: 1471.00px;
+    font-size: 87px;
 
 }
 
@@ -398,6 +404,7 @@
     height: 105.00px;
     left: 983.00px;
     top: 1471.00px;
+    font-size: 87px;
 
 }
 
@@ -641,47 +648,7 @@
 
 }
 
-.createAnAccount .volunteer {
-    position: absolute;
-      box-sizing: content-box;
-      -ms-transform: rotate(0.00deg);
-    -webkit-transform: rotate(0.00deg);
-    transform: rotate(0.00deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-      opacity: 1;
-      cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
-      padding-top: 0.00px;
-      padding-right: 0.00px;
-      padding-bottom: 0.00px;
-      padding-left: 0.00px;
-      background-color: rgba(255, 255, 255, 0);
-      text-align: center;
-      letter-spacing: 0.00px;
-      color: rgba(0, 0, 0, 1);
-      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
-      font-size: 55.00px;
-      font-weight: 400;
-    font-style: normal;
-      font-family: Perpetua, Arial;
-      text-decoration: none;
-      box-shadow: none;
-      overflow-x: unset;
-      overflow-y: unset;
-      white-space: pre;
-      width: 202.00px;
-    height: 63.00px;
-    left: 724.00px;
-    top: 1495.00px;
-
-}
-
-.createAnAccount .organizer {
+/*.createAnAccount .volunteer {
     position: absolute;
       box-sizing: content-box;
       -ms-transform: rotate(0.00deg);
@@ -719,6 +686,85 @@
     left: 1045.00px;
     top: 1495.00px;
 
+}
+
+.createAnAccount .organizer {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: rgba(0, 0, 0, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 45.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: Perpetua, Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 202.00px;
+    height: 63.00px;
+    left: 1045.00px;
+    top: 1495.00px;
+
+}*/
+
+.createAnAccount .type{
+  position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: orange;
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: black;
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 45.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: Perpetua, Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 202.00px;
+    height: 63.00px;
+    left: 845.00px;
+    top: 1495.00px;
 }
 
 .createAnAccount .rectangle88 {
@@ -784,7 +830,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(255, 255, 255, 0);
+      background-color: orange;
       text-align: center;
       letter-spacing: 0.00px;
       color: rgba(0, 0, 0, 1);

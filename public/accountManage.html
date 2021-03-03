@@ -9,37 +9,85 @@
     </head>
 
     <body>
-        <div data-layer="5ebeb42d-3f9f-4afc-a04c-008935baae9f" class="accountManage">        <div data-layer="5e6b5962-3d9d-496b-a846-49aff26d9910" class="rectangle1"></div>
-        <div data-layer="f70206d5-f86e-40c1-8bdb-fe9530e19c29" class="crowdcanvasscom">Crowdcanvass.com</div>
-        <svg data-layer="a2233660-5c40-4276-bf46-0f08a127640b" preserveAspectRatio="none" viewBox="-0.7500000000000036 -0.7499999969482438 55.5 32.49951171875" class="subtraction6"><path d="M 54 30.99959945678711 L -3.552713678800501e-15 30.99959945678711 L -3.552713678800501e-15 3.051756181093879e-09 L 54 3.051756181093879e-09 L 54 30.99860000610352 L 54 30.99959945678711 Z M 26.05175018310547 3.875469923019409 C 25.23361968994141 3.875530004501343 24.42292022705078 4.087419986724854 23.76899909973145 4.472099781036377 L 8.588700294494629 13.40460014343262 C 7.752620220184326 13.8963098526001 7.270410060882568 14.6028995513916 7.265699863433838 15.34319972991943 C 7.261940002441406 15.86489963531494 7.49783992767334 16.34758949279785 7.94789981842041 16.73909950256348 C 8.13971996307373 16.90605926513672 8.363189697265625 17.04990005493164 8.612099647521973 17.16659927368164 L 25.63649940490723 27.3213005065918 C 25.79562950134277 27.41625022888184 26.00093078613281 27.46439933776855 26.24670028686523 27.46439933776855 C 26.98167037963867 27.46439933776855 27.95140075683594 27.03517913818359 28.71719932556152 26.37089920043945 C 29.37787055969238 25.79750061035156 29.77453994750977 25.14983940124512 29.77829933166504 24.63839912414551 C 29.77923011779785 24.36412048339844 29.66313934326172 24.14937973022461 29.44260025024414 24.01740074157715 L 18.92880058288574 17.74620056152344 L 44.72999954223633 17.74620056152344 C 45.98157119750977 17.74620056152344 46.99980163574219 16.72797012329102 46.99980163574219 15.47640037536621 C 46.99980163574219 14.22482967376709 45.98157119750977 13.20660018920898 44.72999954223633 13.20660018920898 L 18.97559928894043 13.20660018920898 L 27.82080078125 8.001899719238281 C 28.6574592590332 7.509850025177002 29.13999938964844 6.80325984954834 29.14469909667969 6.063300132751465 C 29.14846038818359 5.541600227355957 28.91255950927734 5.058909893035889 28.46249961853027 4.667399883270264 C 27.8837890625 4.164060115814209 27.0051097869873 3.875410079956055 26.05175018310547 3.875469923019409 Z"  /></svg>
+        <script>
+            window.onload = function () {
+                var account = document.getElementById("account");
+                var home = document.getElementById("home");
+                var finances = document.getElementById("finances");
+                var analysis = document.getElementById("analysis");
+                var paypal = document.getElementById("paypal");
+                console.log(account);
+            
+                account.onclick = function() {
+                    window.location.href = "accountManage.html";
+                }
+                home.onclick = function() {
+                    window.location.href = "accountMainPageAfterSignIn.html";
+                }
+                finances.onclick = function() {
+                    window.location.href = "financePage.html";
+                }
+                analysis.onclick = function() {
+                    window.location.href = "analysisPage.html"
+                }
+                paypal.onclick = function(){
+                    window.location.href = "https://www.paypal.com/us/home"
+                }
+            }
+            </script>
+
+        <div data-layer="5ebeb42d-3f9f-4afc-a04c-008935baae9f" class="accountManage">        
         <div data-layer="96b59a84-730b-481d-9a7d-2b673b4dc758" class="rectangle168"></div>
         <div data-layer="da3ea8e9-61cd-4029-be59-8c3c17be6a8e" class="rectangle33"></div>
         <div data-layer="1a515b7e-4316-410c-8bb6-dc6a93cb40df" class="rectangle34"></div>
         <div data-layer="31872f6e-a71c-41ad-a70a-88ce0282d742" class="rectangle35"></div>
         <div data-layer="1e8b7886-984c-46c9-b80d-3bef54c132a1" class="rectangle36"></div>
-        <div data-layer="ca99c48a-7cb3-4fae-9e33-c87faee18bc6" class="home">Home</div>
-        <div data-layer="e1701c82-a842-4dea-a0a7-aecdf769e379" class="finances">Finances</div>
-        <div data-layer="71f03aac-ab82-404e-abec-a2a66c3ed334" class="analysis">Analysis</div>
-        <div data-layer="f1265b7d-a46b-4c40-a514-92f6f94a895a" class="accountXxx">Account XXX</div>
-        <div data-layer="5389562a-3bd7-4918-b5e8-f316c48af281" class="rectangle174"></div>
-        <div data-layer="b2f12b11-8f05-4561-ba2a-1499dcec49fb" class="rectangle175"></div>
+        <div data-layer="ca99c48a-7cb3-4fae-9e33-c87faee18bc6" class="home" id = "home">Home</div>
+        <div data-layer="e1701c82-a842-4dea-a0a7-aecdf769e379" class="finances" id = "finances">Finances</div>
+        <div data-layer="71f03aac-ab82-404e-abec-a2a66c3ed334" class="analysis" id = "analysis">Analysis</div>
+        <div data-layer="f1265b7d-a46b-4c40-a514-92f6f94a895a" class="accountXxx" id = "account">Account</div>
+      <!-- <div data-layer="5389562a-3bd7-4918-b5e8-f316c48af281" class="rectangle174"></div>-->
+      <!--- <button type=button id="home">Home</button>
+       <button type=button id="account">Account</button>
+       <button type=button id="finances">Finances</button>
+       <button type=button id="analysis">analysis</button>-->
+        <div><form> 
+             <label for="accountEmail" class="accountEmail">Account Email</label><br>
+             <input type="text" id="accountEmail" name="AccountEmail" class="rectangle180"><br><!--rectangle180-->
+             <label for="accountUsername" class="accountUsername">Account Username</label><br>
+            <input type="text" id="aacountUsername" name="accountUsername" class = "rectangle176"><br><br><!--rectangle176-->
+            <label for="password" class="password">Password</label><br>
+            <input type="text" id="password" name="password" class="rectangle177"><br><br><!--rectangle177-->
+            <input type="submit" value="Change Password" class="rectangle178"><br><br><!--rectangle178-->
+            <lable for="Account Type" class="accountType">Account Type</lable><br>
+            <select name="type" id="type" class="rectangle179"> <!--rectangle179-->
+                <option value="organizer">Organizer</option>
+                <option value="voulnteer">Voulnteer</option>
+            </select>
+        </form></div>
+        <div><form>
+            <lable for="bankAccount" class="bankAccount">Bank Account</lable><br>
+            <input type="text" id="bankAccount" name="bankAccount" class = "rectangle174"><br><!--rectangle174-->
+            <button type = button id = "paypal" class="rectangle175">PayPal</button><!--rectangle175-->
+        </form></div>
+       <!-- <div data-layer="b2f12b11-8f05-4561-ba2a-1499dcec49fb" class="rectangle175"></div>
         <div data-layer="7a5e4c95-ca9f-4706-8b8c-9fcd6f930a37" class="rectangle176"></div>
         <div data-layer="64a524ca-29fe-4c52-b4b7-0ff3913e0aad" class="rectangle177"></div>
         <div data-layer="e454b781-0a70-486a-8650-62636ba8cc8a" class="rectangle178"></div>
         <div data-layer="1b4bfdac-eeca-461d-8e26-42a7fdd349c0" class="rectangle179"></div>
-        <div data-layer="c2c085be-654a-4bc3-865a-dd55e0b01c27" class="rectangle180"></div>
+        <div data-layer="c2c085be-654a-4bc3-865a-dd55e0b01c27" class="rectangle180"></div>-
         <div data-layer="c6569536-100f-4600-a0e2-0b5de75ab60c" class="accountEmail">Account Email</div>
         <div data-layer="298f0b9b-4da5-4af2-99a5-0cb26a0cacfd" class="accountUsername">Account Username</div>
         <div data-layer="53c0e6a9-3cfe-49df-884e-376dc2e453b7" class="password">Password</div>
         <div data-layer="4e4012d8-3e1b-4ef3-bb3a-7b50f66abbbd" class="xxxxx">XXXXX@XXX.XXX</div>
         <div data-layer="3b55ea67-72be-4d58-b96d-d972c1e8da07" class="xxxxxxxx28df70be">XXXXXXXX</div>
-        <div data-layer="2a9490a6-3b6f-47b2-9b6f-e8424d3f2c61" class="xxxxxxxx">XXXXXXXX</div>
+        <div data-layer="2a9490a6-3b6f-47b2-9b6f-e8424d3f2c61" class="xxxxxxxx">XXXXXXXX</div> 
         <div data-layer="2039f1e4-eb5e-4634-bbae-5b9bca82d184" class="changePassword">Change Password</div>
         <div data-layer="2fbfb42f-dc09-46b8-b804-411aba5aefc3" class="accountType">Account Type</div>
         <div data-layer="c6e45737-0fec-4144-bdea-757793ab9145" class="organizer">Organizer</div>
         <div data-layer="8eb34676-096a-4c6e-ad84-9ce689bd0cc4" class="bankAccount">Bank Account</div>
-        <div data-layer="1d30196c-fbd0-4de8-bd5a-4f6bf2ccf8d3" class="linkPaypal">Link PayPal</div>
-        <div data-layer="b78955e8-f7c9-45d5-90b7-a8ed0fab3bb3" class="xxxxxxxxxx">XXXXXXXXXX</div>
+        <div data-layer="1d30196c-fbd0-4de8-bd5a-4f6bf2ccf8d3" class="linkPaypal" id="paypal">Link PayPal</div>
+       --- <div data-layer="b78955e8-f7c9-45d5-90b7-a8ed0fab3bb3" class="xxxxxxxxxx">XXXXXXXXXX</div>-->
 </div>
 
 
