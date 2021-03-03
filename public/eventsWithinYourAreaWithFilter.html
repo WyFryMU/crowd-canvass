@@ -9,6 +9,29 @@
     </head>
 
     <body>
+
+	<script>
+	window.onload = function () {
+		var account = document.getElementById("account");
+		var home = document.getElementById("home");
+		var finances = document.getElementById("finances");
+		var analysis = document.getElementById("analysis");
+		console.log(account);
+	
+		account.onclick = function() {
+			window.location.href = "accountManage.html";
+		}
+		home.onclick = function() {
+			window.location.href = "accountMainPageAfterSignIn.html";
+		}
+		finances.onclick = function() {
+			window.location.href = "financePage.html";
+		}
+		analysis.onclick = function() {
+			window.location.href = "analysisPage.html";
+		}
+	}	
+
         <div data-layer="d2dd7fbd-4633-4b97-a612-99cbb90a5a9b" class="eventsWithinYourAreaWithFilter">        <div data-layer="a16cc04e-050d-4aa7-b75c-15bb913d045d" class="rectangle89"></div>
         <div data-layer="e80ec82d-d9cc-43f8-a8f0-954d415ba5f3" class="rectangle90"></div>
         <div data-layer="62ffb0c9-9ace-4774-8035-e0654231068d" class="rectangle91"></div>
@@ -20,6 +43,10 @@
         <div data-layer="dabb20d3-fb58-4fb7-a2e0-17aaecdb9a50" class="rectangle34"></div>
         <div data-layer="83baf27c-a50f-4e3d-8add-fe378f38ac6f" class="rectangle35"></div>
         <div data-layer="f62644b2-5c62-43c7-9dcf-1b2fbdd7d5d4" class="rectangle36"></div>
+	<div data-layer="0ff7ddbd-b602-4bda-8fe8-146807b5e92f" class="finances" id="finances">Finances</div>
+        <div data-layer="fe228b5b-ca7c-4c1f-bdb5-f35d49a01759" class="analysis" id="analysis">Analysis</div>
+        <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx" id="account">Account XXX</div>
+	<div data-layer="6a33a2eb-8e85-4c50-b281-d44beeb44ee4" class="home" id="home">Home</div>
         <div data-layer="8094eafd-2956-4e4a-b5c3-0a966d74a09f" class="finances">Finances</div>
         <div data-layer="ce8130cc-99f6-437f-824b-5eeb7a7b9486" class="analysis">Analysis</div>
         <div data-layer="0e9637e7-f1ad-41dd-bd71-665e529c0e24" class="home">Home</div>
