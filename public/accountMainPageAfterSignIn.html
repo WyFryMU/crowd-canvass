@@ -13,6 +13,8 @@
 		var home = document.getElementById("home");
 		var finances = document.getElementById("finances");
 		var analysis = document.getElementById("analysis");
+		var canvassEvent = document.getElementById("canvassEvent");
+		var serviceEvent = document.getElementById("serviceEvent");
 		console.log(account);
 	
 		account.onclick = function() {
@@ -26,6 +28,12 @@
 		}
 		analysis.onclick = function() {
 			window.location.href = "analysisPage.html";
+		}
+		canvassEvent.onclick = function() {
+			window.location.href = "createACanvassEvent.html";
+		}
+		serviceEvent.onclick = function() {
+			window.location.href = "createAServiceEvent.html";
 		}
 	}
 	</script>
@@ -61,8 +69,8 @@
         <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx" id="account">Account XXX</div>
         <div data-layer="92a03d54-bd41-4aa3-a153-239c12060ce3" class="accountMainPageAfterSignIn938344b19eb8"></div>
         <div data-layer="d2991f16-8256-4731-a4a7-07759fa54d5e" class="payVolunteers">Pay Volunteers</div>
-        <div data-layer="8d0e8581-227d-4a40-9d77-fedd50ae5bd7" class="createACommunityServiceEvent"><a href="createAServiceEvent.html">Create A Community<br/>Service Event</a></div>
-        <div data-layer="59664ca1-601f-4d96-a377-b443c3a14c59" class="createACanvassEvent"><a href="createACanvassEvent.html">Create A Canvass Event</a></div>
+        <div data-layer="8d0e8581-227d-4a40-9d77-fedd50ae5bd7" class="createACommunityServiceEvent" id="serviceEvent">Create A Community<br/>Service Event</div>
+        <div data-layer="59664ca1-601f-4d96-a377-b443c3a14c59" class="createACanvassEvent" id="canvassEvent">Create A Canvass Event</div>
 </div>
     
 </body>
