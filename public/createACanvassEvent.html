@@ -18,6 +18,14 @@
 		var analysis = document.getElementById("analysis");
 		//var canvassEvent = document.getElementById("canvassEvent");
 		var serviceEvent = document.getElementById("serviceEvent");
+		var rectYes = document.getElementById("rectYes");
+		var rectNo = document.getElementById("rectNo");
+		var yes = document.getElementById("yes");
+		var no = document.getElementById("no");
+		var rectService = document.getElementById("rectService");
+		var service = document.getElementById("service");
+		var rectHour = document.getElementById("rectHour");
+		var hour = document.getElementById("hour");
 		console.log(account);
 	
 		account.onclick = function() {
@@ -37,6 +45,40 @@
 		}*/
 		serviceEvent.onclick = function() {
 			window.location.href = "createAServiceEvent.html";
+		}
+		
+		rectYes.onclick = function(){
+			rectYes.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectNo.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		yes.onclick = function(){
+			rectYes.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectNo.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		rectNo.onclick = function(){
+			rectNo.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectYes.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		no.onclick = function(){
+			rectNo.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectYes.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		
+		rectService.onclick = function(){
+			rectService.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectHour.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		service.onclick = function(){
+			rectService.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectHour.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		rectHour.onclick = function(){
+			rectHour.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectService.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
+		}
+		hour.onclick = function(){
+			rectHour.style.backgroundColor = "#ffa449";//rgba(255, 164, 73, 1);
+			rectService.style.backgroundColor = "#ffffff";//rgba(255, 255, 255, 1);
 		}
 	}
 	</script>
@@ -63,11 +105,11 @@
 
         <div data-layer="3ad03fb9-0034-418a-837b-03fddc2b637b" class="rectangle96"></div>
         <div data-layer="c9108fe4-caed-4239-bfde-3f2cfed36762" class="rectangle97"></div>
-        <div data-layer="1841a610-461d-4ce5-9f3a-270ed5c85b9a" class="rectangle98"></div>
-        <div data-layer="5d5ad4d6-8eff-4d3b-80ca-6d138be614ba" class="rectangle99"></div>
+        <div data-layer="1841a610-461d-4ce5-9f3a-270ed5c85b9a" class="rectangle98" id="rectYes"></div> <!-- rectYes -->
+        <!--<div data-layer="5d5ad4d6-8eff-4d3b-80ca-6d138be614ba" class="rectangle99"></div>-->
         <!--<div data-layer="89afe22a-d8c2-4df9-a3f6-f6b7b9dbf23a" class="rectangle100"></div>-->
-        <div data-layer="d20b98ac-11b6-4a04-a0c0-101815256431" class="rectangle101"></div>
-        <div data-layer="1ac74fc5-7f6d-45c0-b20e-8742dc81e912" class="rectangle102"></div>
+        <div data-layer="d20b98ac-11b6-4a04-a0c0-101815256431" class="rectangle101" id="rectService"></div> <!-- rectService -->
+        <div data-layer="1ac74fc5-7f6d-45c0-b20e-8742dc81e912" class="rectangle102" id="rectHour"></div> <!-- rectHour -->
        <!--- <div data-layer="c8c7990f-ae48-4d7c-9777-2b87ce35f952" class="rectangle103"></div>
         <div data-layer="dfedb46a-9939-4521-8a5b-3da7accee3c8" class="rectangle104"></div>
         <div data-layer="b2539889-dd4a-4782-8c90-c49db5e54c94" class="rectangle105"></div>
@@ -76,7 +118,7 @@
         <div data-layer="a2ca7fd1-9b39-4477-85a7-592379749b12" class="rectangle136"></div>
         <div data-layer="ed909528-ebbf-47a4-8f50-479f96b7a527" class="rectangle134"></div>
         <div data-layer="40569804-1e32-4406-91ec-0405f2446faa" class="rectangle137"></div>
-        <div data-layer="3d8935e3-a52e-4c66-8da5-fb28a355517c" class="rectangle141"></div>
+        <div data-layer="3d8935e3-a52e-4c66-8da5-fb28a355517c" class="rectangle141" id="rectNo"></div> <!-- rectNo -->
         <div data-layer="6b43736b-c83e-40d0-a890-b8c90e6ce2d0" class="howManyRoutesWillBeCanvassed">How many routes will be canvassed:</div>
         <div data-layer="6afa2c42-7beb-49a2-855b-013a1045b195" class="route1Addresses">Route 1 Addresses</div>
         <div data-layer="e2b20d4f-8c9f-47c1-abd2-1bd8fe72c68a" class="route2Addresses">Route 2 Addresses</div>
@@ -88,11 +130,11 @@
         <div data-layer="5dc7c581-e439-48d1-aa4c-1fcf1bfcc813" class="home" id="home">Home</div>
         <div data-layer="6e318321-2420-4470-be3e-7a502bb9d592" class="accountXxx" id="account">Account XXX</div>
         <div data-layer="ee2145c3-4baa-4df4-a0f7-f0031afbb050" class="createCanvassEvent">Create Canvass Event</div>
-        <div data-layer="85b2258f-29be-45d0-83bc-0c074e073856" class="yes">Yes</div>
-        <div data-layer="5ff3461c-3cf2-4e58-a119-ff0233b5833c" class="no">No</div>
+        <div data-layer="85b2258f-29be-45d0-83bc-0c074e073856" class="yes" id="yes">Yes</div>
+        <div data-layer="5ff3461c-3cf2-4e58-a119-ff0233b5833c" class="no" id="no">No</div>
        <!---- <div data-layer="7f3d1316-0a28-4282-b642-089975acd3aa" class="x75d878c7">$XXX.XX</div>-->
-        <div data-layer="1ae051b0-347f-4d57-80a5-02695c5b1af8" class="service">Service</div>
-        <div data-layer="dd0042a6-e275-46af-8521-b9aacc3a47e6" class="hour">Hour</div>
+        <div data-layer="1ae051b0-347f-4d57-80a5-02695c5b1af8" class="service" id="service">Service</div>
+        <div data-layer="dd0042a6-e275-46af-8521-b9aacc3a47e6" class="hour" id="hour">Hour</div>
         <div data-layer="27553071-65d1-4d60-b2fc-3648161f40d7" class="paidEvent">Paid Event</div>
         <div data-layer="88042ece-4503-44a0-bff1-1e8ea4313415" class="amountPaid">Amount Paid</div>
         <div data-layer="806b80df-5409-47ee-8e62-5a1eaa6f5c44" class="thisEventIsPaidBy">This Event is Paid By</div>
