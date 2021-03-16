@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="createAnAccount.css">
 		
 		    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <!--<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>-->
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <!--<script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-firestore.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-functions.js"></script>
@@ -18,18 +18,19 @@
     <script defer src="/__/firebase/8.3.0/firebase-storage.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-analytics.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-performance.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-performance.js"></script>-->
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!--<script defer src="/__/firebase/init.js?useEmulator=true"></script>-->
+
 	
     </head>
 
     <body>
 	
-	<script>
+	<!--<script>
       document.addEventListener('DOMContentLoaded', function() {
         //const loadEl = document.querySelector('#load');
 		//console.log(loadEl);
@@ -69,9 +70,9 @@
           //loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
       });
-    </script>
+    </script> -->
 	
-	<script>
+	<!--<script>
 	window.onload = function () {
 	
 		var testButton = document.getElementById("testButton");
@@ -96,10 +97,10 @@
   });
 	}
 }
-	</script>
+	</script> -->
 
         <div data-layer="e736ea6d-ca55-4a6a-af8e-ce00af1b2b45" class="createAnAccount"> 
-        <form> <!---all comments are classes for connection-->
+        <!--<form> <!---all comments are classes for connection-->
                 <div data-layer="6c9f7d04-d76d-4dea-b011-470f71437911" class = "rectangle25"></div> <!---rectangle25-->
                 <label for="name" class="name">Name</label><br> <!---name-->
                 <input type="text" id="name" name="name" class="rectangle26"><br> <!---rectangle26-->
@@ -116,9 +117,9 @@
                     <option value="organizer">Organizer</option>
                     <option value="voulnteer">Volunteer</option>
                 </select><br><br>
-				<!--<button id="testButton">Test Create</button>-->
-                <input type="submit" value="Create Account" class="createAccount" onclick="creatAccount()"><br><br><!---createAccount-->
-            </form></div>
+				<button id="testButton" class="createAccount">Test Create</button>
+                <!--<input type="submit" value="Create Account" class="createAccount" onclick="creatAccount()"><br><br><!---createAccount-->
+            <!--</form>--></div>
 
         <!--<div data-layer="6c9f7d04-d76d-4dea-b011-470f71437911" class="rectangle25"></div>
         <div data-layer="70db02dc-3ede-4b51-b66c-55c455ed4330" class="rectangle26"></div>
@@ -140,8 +141,9 @@
         <div data-layer="68864466-970e-4511-907b-caa97085d87c" class="createAccount">Create Account</div>
 </div>-->
 
-
-    
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+		<script src="createAccount.js"></script>
     </body>
     </html>
             
