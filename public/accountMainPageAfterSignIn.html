@@ -2,13 +2,14 @@
 <html>
 <head>
      <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <title>Account Main Page After Sign In</title>        
      <link rel="stylesheet" href="accountMainPageAfterSignIn.css">
 </head>
 
 <body>
 	<script>
-	window.onload = function () {
+	/*window.onload = function () {
 		var account = document.getElementById("account");
 		var home = document.getElementById("home");
 		var finances = document.getElementById("finances");
@@ -35,24 +36,42 @@
 		serviceEvent.onclick = function() {
 			window.location.href = "createAServiceEvent.html";
 		}
-	}
+	}*/
 	</script>
-
-
-
-        <div data-layer="f2d16d47-5119-4c95-8734-576d03a526ae" class="accountMainPageAfterSignIn">
-		<div data-layer="a2d6733a-b522-47dd-ab44-abbe2c1ea2d6" class="rectangle33"></div>
-        <div data-layer="17f05665-596b-422d-90d6-01279321d3ee" class="rectangle34"></div>
-        <div data-layer="55076c8e-7aed-4a16-bc76-b40904af8a5f" class="rectangle35"></div>
-        <div data-layer="3d3868f0-f96f-4033-8a26-bb91f2acdecd" class="rectangle36"></div>
-        <div data-layer="f9ab126b-df87-438e-a0a2-a4b2e82491bc" class="rectangle37"></div>
-        <div data-layer="facfe2ba-673f-4f05-bba1-0babec128bd9" class="repeatGrid2">
-		<div data-layer="c6273f0c-3170-47ce-9429-a8a22ddf77e0" class="rectangle3908c03504"></div>
-        <div data-layer="f09e212f-9a38-4fcb-9448-8effc736742d" class="rectangle39"></div>
+	<ul>
+		<img src="assets/capture.png" alt="logo" class="logo"/>
+		<li><a href="accountManage.html">Account</a></li>
+		<li><a href="accountMainPageAfterSignIn.html">Home</a></li>	
+		<li><a href="analysisPage.html">Finances</a></li>
+		<li><a href="analysisPage.html">Analysis</a></li>
+	</ul>
+	<div class = "row">
+	<div id = "mapSection" class = "column">
+		<a id = "volunteer" class = "button">Voulenteer</a><br>
+		<a id = "collect" class = "button">Collect Payments</a><br>
+		<p>Events within your area</p>
+		<img src ="assets/image5.png" alt="map" class= "map"/>
+	</div>
+	<div id = "createSection" class = "column">
+		<a id = "organizer" class = "button">Organizer</a><br>
+		<a href = "createAServiceEvent.html" class = "button">Create a Community service event</a><br>
+		<a id = "pay" class = "button">Pay Volunteers</a><br>
+		<a href = "createACanvassEvent.html" class = "button" id="createEvent">Create a Canvass event</a><br>
+	</div>
 </div>
-        <div data-layer="49d3eb65-fc3e-4166-92fa-750a82012301" class="rectangle44"></div>
-        <div data-layer="1ffb8e33-ebbf-4aba-8dba-26df469c1187" class="rectangle48"></div>
-        <div data-layer="78e58e0c-c5e2-494b-8133-5527e151d572" class="rectangle152"></div>
+       <!--<div data-layer="f2d16d47-5119-4c95-8734-576d03a526ae" class="accountMainPageAfterSignIn">
+		<div data-layer="a2d6733a-b522-47dd-ab44-abbe2c1ea2d6" class="rectangle33"></div> <--account box 33--
+        <div data-layer="17f05665-596b-422d-90d6-01279321d3ee" class="rectangle34"></div> <--home box 34--
+        <div data-layer="55076c8e-7aed-4a16-bc76-b40904af8a5f" class="rectangle35"></div> <--analysis box 35--
+        <div data-layer="3d3868f0-f96f-4033-8a26-bb91f2acdecd" class="rectangle36"></div> <--finace box 36--
+        <div data-layer="f9ab126b-df87-438e-a0a2-a4b2e82491bc" class="rectangle37"></div> <--voulenteer box--
+        <div data-layer="facfe2ba-673f-4f05-bba1-0babec128bd9" class="repeatGrid2"> <--Second grouping--
+		<div data-layer="c6273f0c-3170-47ce-9429-a8a22ddf77e0" class="rectangle3908c03504"></div> <--Left box--
+        <div data-layer="f09e212f-9a38-4fcb-9448-8effc736742d" class="rectangle39"></div> <--Right box--
+</div>
+        <div data-layer="49d3eb65-fc3e-4166-92fa-750a82012301" class="rectangle44"></div> <--collect payment box--
+        <div data-layer="1ffb8e33-ebbf-4aba-8dba-26df469c1187" class="rectangle48"></div> <--map box--
+        <div data-layer="78e58e0c-c5e2-494b-8133-5527e151d572" class="rectangle152"></div> <--Organizer box--
         <a href="eventsWithinYourAreaWithFilter.html"><div data-layer="c3c426b5-6810-45f3-87c0-2b2950fc8226" class="image5"></div></a>
         <div data-layer="66476c2a-b66f-491c-b9cf-12b4f1af9f8c" class="repeatGrid3">
 		<div data-layer="74194d72-d82f-4e94-a7d5-3848c7c6109d" class="rectangle1536d860402"></div>
@@ -66,16 +85,16 @@
         <div data-layer="3f4f0601-c243-4a77-81dc-bc75f695f3bb" class="asAVolunteer">As A Volunteer</div>
         <div data-layer="0ff7ddbd-b602-4bda-8fe8-146807b5e92f" class="finances" id="finances">Finances</div>
         <div data-layer="fe228b5b-ca7c-4c1f-bdb5-f35d49a01759" class="analysis" id="analysis">Analysis</div>
-        <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx" id="account">Account XXX</div>
+        <div data-layer="f18d4249-6d3c-43a0-9826-38c4dc9fa6bb" class="accountXxx" id="account">Account</div>
         <div data-layer="92a03d54-bd41-4aa3-a153-239c12060ce3" class="accountMainPageAfterSignIn938344b19eb8"></div>
         <div data-layer="d2991f16-8256-4731-a4a7-07759fa54d5e" class="payVolunteers">Pay Volunteers</div>
         <div data-layer="8d0e8581-227d-4a40-9d77-fedd50ae5bd7" class="createACommunityServiceEvent" id="serviceEvent">Create A Community<br/>Service Event</div>
         <div data-layer="59664ca1-601f-4d96-a377-b443c3a14c59" class="createACanvassEvent" id="canvassEvent">Create A Canvass Event</div>
-</div>
+</div>-->
     
 	    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
 		<script src="accountMainPageAfterSignIn.js"></script>
 	
 </body>
-/html>            
+</html>            
