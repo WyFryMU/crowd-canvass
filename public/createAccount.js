@@ -14,7 +14,7 @@
 	//get elements
 	const txtEmail = document.getElementById("email");
 	const txtPassword = document.getElementById("password");
-	const btnCreateAccount = document.getElementById("testButton");
+	const btnCreateAccount = document.getElementById("createAccount");
 	
 	const txtName = document.getElementById("name");
 	const txtAccountUserName = document.getElementById("accountUsername");

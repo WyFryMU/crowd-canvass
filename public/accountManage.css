@@ -1,22 +1,93 @@
-
-
-      html {
-        height: 100%;
-        width: 100%;
+    html {
+        height: 100vh;
+        width: 100vw;
       }
+                
+                body {
+          font-family: 'Open Sans', serif;
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          -webkit-font-smoothing: antialiased;
+          overflow: -moz-scrollbars-none;
+          -ms-overflow-style: none;
+          background-color: rgb(229, 229, 229);
+        }
 
-      body {
-        font-family: 'Open Sans', serif;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        -webkit-font-smoothing: antialiased;
-        overflow: -moz-scrollbars-none;
-        -ms-overflow-style: none;
-      }
+      ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:  rgba(255, 164, 73, 1);
+          }
+          .logo {
+            float: left;
+            padding: 0px 0;
+            height: 75px;
+            width: 74px;
+            margin-left: 5%;
+          }
+          li {
+            float: right;
+          }
+          
+          li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 35px;
+            margin-right: 100px;
+          }
+          
+          li a:hover {
+            color: rgba(112, 112, 112, 1);
+          }
+          form{
+            
+              margin: 0 auto;
+              width:fit-content;
+              margin-top: 5%;
+              border: 5px solid rgba(255, 164, 73, 1);
+              padding: 50px;
+              align-items: center;
+              
+            
+          }
+          .button {
+            background-color: rgba(255, 164, 73, 1);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          a.createEvent{
+            width:50%;
+          }
+          .button:hover{
+            color: rgba(112, 112, 112, 1); 
+          }
 
-      
+
+/* drop down menu for account type formatting */
+/*          nav ul li a {
+                             display: block;
+                             font-family: 'Open Sans', serif;
+                             color: black;
+                             text-decoration: none;
+                             font-size: 16px;
+                             padding: 15px 32px;
+                             
+                }
+*/
 
       .accountManage {
 
@@ -31,24 +102,22 @@
     transform-origin: center;
       opacity: 1;
       cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
+      margin: 0 auto;
       padding-top: 0.00px;
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
       overflow-x: auto;
       overflow-y: auto;
-      background-color: rgba(205, 205, 205, 1);
-      width: 1920.00px;
-    height: 1080.00px;
+     background-color: rgba(255, 255, 255, 1);
+      width: 70%;
+      clear: both;
+    height: 100%;
     left: 0px;
     top: 0px;
 
 }
-
+/*
 .accountManage .rectangle1 {
     position: absolute;
       box-sizing: border-box;
@@ -60,10 +129,7 @@
     transform-origin: center;
       opacity: 1;
       cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
+      margin: 0 auto;
       padding-top: 0.00px;
       padding-right: 0.00px;
       padding-bottom: 0.00px;
@@ -86,10 +152,11 @@
       border-bottom-left-radius: 0.00px;
       border-bottom-right-radius: 0.00px;
       box-shadow: none;
-      width: 1896.00px;
-    height: 47.00px;
+      width: 70%;
+    height: 100%;
     left: 12.00px;
     top: 15.00px;
+    clear: both;
 
 }
 
@@ -106,10 +173,7 @@
     transform-origin: center;
       opacity: 1;
       cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
+      margin: 0 auto;
       padding-top: 0.00px;
       padding-right: 0.00px;
       padding-bottom: 0.00px;
@@ -119,8 +183,8 @@
           stroke-width: 1.00px;
           stroke-linecap: butt;
       box-shadow: none;
-      width: 54.00px;
-    height: 31.00px;
+      width: 70%
+    height: 100%;
     left: 47.00px;
     top: 23.00px;
 
@@ -181,10 +245,7 @@
     transform-origin: center;
       opacity: 1;
       cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
+      margin: 0 auto;
       padding-top: 0.00px;
       padding-right: 0.00px;
       padding-bottom: 0.00px;
@@ -207,8 +268,8 @@
       border-bottom-left-radius: 0.00px;
       border-bottom-right-radius: 0.00px;
       box-shadow: none;
-      width: 419.00px;
-    height: 105.00px;
+      width: 70%;
+    height: 100%;
     left: 1456.00px;
     top: 107.00px;
 
@@ -383,7 +444,7 @@
     height: 63.00px;
     left: 1247.00px;
     top: 129.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -408,7 +469,7 @@
       padding-left: 0.00px;
       background-color: rgba(255, 255, 255, 0);
       text-align: left;
-      letter-spacing: 0.00px;
+     letter-spacing: 0.00px;
       color: rgba(0, 0, 0, 1);
       -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
       font-size: 55.00px;
@@ -424,7 +485,7 @@
     height: 63.00px;
     left: 558.00px;
     top: 115.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -465,7 +526,7 @@
     height: 63.00px;
     left: 862.00px;
     top: 115.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -506,7 +567,7 @@
     height: 63.00px;
     left: 1518.00px;
     top: 125.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -533,7 +594,7 @@
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: solid;
       border-bottom-width: 1.00px;
-      border-left-color: rgba(112, 112, 112, 1);
+     border-left-color: rgba(112, 112, 112, 1);
       border-left-style: solid;
       border-left-width: 1.00px;
       border-right-color: rgba(112, 112, 112, 1);
@@ -1102,7 +1163,7 @@
     height: 46.00px;
     left: 302.00px;
     top: 693.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -1263,7 +1324,7 @@
     height: 46.00px;
     left: 1039.00px;
     top: 554.00px;
-	cursor: pointer;
+              cursor: pointer;
 
 }
 
@@ -1306,4 +1367,4 @@
     top: 380.00px;
 
 }
-
+*/
