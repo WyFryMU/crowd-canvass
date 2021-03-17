@@ -1,210 +1,49 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-                           <title>Create an Account</title>
-                           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="createAnAccount.css">
-              
-              <!-- update the version number as needed -->
-    <!--<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>-->
-    <!-- include only the Firebase features as you need -->
-    <!--<script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-performance.js"></script>-->
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <!--<script defer src="/__/firebase/init.js?useEmulator=true"></script>-->
-
-              
-    </head>
-
-    <body>
-              
-              
-                                         <ul>
-                                                       <img src="assets/capture.png" alt="logo" class="logo"/>
-                                                       <li><a href="accountManage.html">Account</a></li>
-                                                       <li><a href="accountMainPageAfterSignIn.html">Home</a></li>              
-                                                       <li><a href="analysisPage.html">Finances</a></li>
-                                                       <li><a href="analysisPage.html">Analysis</a></li>
-                                         </ul>
-              
-              <!--<form>--><p>
-                                                       <label for = "name">Name</label>
-                                                       <input type="text" id = "name"><br><br>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Create an Account</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="createAnAccount.css">
+  </head>
+  <body>
+       <ul>
+            <img src="assets/capture.png" alt="logo" class="logo"/>
+            <li><a href="accountManage.html">Account</a></li>
+            <li><a href="accountMainPageAfterSignIn.html">Home</a></li>              
+            <li><a href="analysisPage.html">Finances</a></li>
+            <li><a href="analysisPage.html">Analysis</a></li>
+        </ul>        
+ <!--<form>--><p>
+               <label for = "name">Name</label>
+               <input type="text" id = "name"><br><br>
                                                        
-                                                       <label for = "accountUserName">Account username</label>
-                                                       <input type="text" id = "accountUsername"><br><br>
+               <label for = "accountUserName">Account username</label>
+               <input type="text" id = "accountUsername"><br><br>
                                                        
-                                                       <label for = "email"> Email</label>
-                                                       <input type="text" id = "email"><br><br>
+               <label for = "email"> Email</label>
+               <input type="text" id = "email"><br><br>
                                                        
-                                                       <label for = "password">Password</label>
-                                                       <input type="text" id = "password"><br><br>
+               <label for = "password">Password</label>
+               <input type="text" id = "password"><br><br>
                                                        
-                                                       <label for = "reEnterPassword">Re-enter Password</label>
-                                                       <input type="text" id = "reEnterPassword"><br><br>
+               <label for = "reEnterPassword">Re-enter Password</label>
+               <input type="text" id = "reEnterPassword"><br><br>
                                                        
-                                                       <label> Account Type <label/>
-						<select class="button" id="type">							   <option value="organizer">Organizer</option>
-
-                    <option value="volunteer">Volunteer</option>
-                </select>
-                                                       <!--<button class = "button" id = "volunteer" value = "volunteer">Volunteer</button>
-                                                       <button class = "button" id = "organizer" value = "organizer">Organizer</button>--></button><br><br>
-                                                       
-                                                       <button class = "button" id = "createAccount" value = "createAccount">Create Account</button>
-                                                       
-              
-                           <!--<form/>--></p>
+               <label> Account Type <label/>
+			       <select class="button" id="type">
+				        <option value="organizer">Organizer</option>
+						<option value="volunteer">Volunteer</option>
+                   </select>
+                <!--<button class = "button" id = "volunteer" value = "volunteer">Volunteer</button>
+                <button class = "button" id = "organizer" value = "organizer">Organizer</button>--><br><br>
+			   <button class = "button" id = "createAccount" value = "createAccount">Create Account</button>
+               </p>
               
               <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
                            <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
                            <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
                            <script src="createAccount.js"></script>
-              <!--<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        //const loadEl = document.querySelector('#load');
-                           //console.log(loadEl);
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-                             console.log(`Firebase SDK loaded with ${features.join(', ')}`)
-          //loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-                             console.log('Error loading the Firebase SDK, check the console.');
-          //loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script> -->
               
-              <!--<script>
-              window.onload = function () {
-              
-                           var testButton = document.getElementById("testButton");
-                           
-                           testButton.onclick = function() {
-                           var email = document.getElementById("email").value;
-                           var password = document.getElementById("password").value;
-                           firebase.auth().createUserWithEmailAndPassword(email, password)
-                           .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-              console.log(user);
-              console.log("success");
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-              console.log(errorCode);
-              console.log(errorMessage);
-    // ..
-  });
-              }
-}
-              </script> -->
-
-       <!-- <div data-layer="e736ea6d-ca55-4a6a-af8e-ce00af1b2b45" class="createAnAccount"> -->
-        <!--<form> <!---all comments are classes for connection-->
-
-             <!--    <div data-layer="6c9f7d04-d76d-4dea-b011-470f71437911" class = "rectangle25"></div> <!---rectangle25-->
-             <!--    <label for="name" class="name">Name</label><br> <!---name-->
-              <!--   <input type="text" id="name" name="name" class="rectangle26"><br> <!---rectangle26-->
-              <!--   <label for="accountUsername" class="accountUserName">Account Username</label><br> <!---accountUserName-->
-               <!--  <input type="text" id="accountUsername" name="accountUsername" class="rectangle27"><br><br> <!---rectangle27-->
-              <!--   <label for="email" class="email">Email</label><br> <!---email-->
-              <!--   <input type="text" id="email" name="email" class="rectangle28"><br><br> <!---rectangle28-->
-              <!--   <label for="password" class="password">Password</label><br><!---password-->
-              <!--   <input type="text" id="password" name="password" class="rectangle29"><br><br><!---rectangle29-->
-              <!--   <label for="rePassword" class = "reEnterPassword">Re-enter Password</label><br><!---reEnterPassword-->
-               <!--  <input type="text" id="rePassword" name="rePassword" class="rectangle30"><br><br><!---rectangle30-->
-              <!--   <label for="Account Type" class="accountType">Account Type</label><br><!---accountType-->
-             <!--    <select name="type" id="type" class="type"><!---organizer-->
-               <!--      <option value="organizer">Organizer</option>
-=======
-                <div data-layer="6c9f7d04-d76d-4dea-b011-470f71437911" class = "rectangle25"></div> <!---rectangle25-->
-               <!-- <label for="name" class="name">Name</label><br> <!---name-->
-              <!--  <input type="text" id="name" name="name" class="rectangle26"><br> <!---rectangle26-->
-                <!--<label for="accountUsername" class="accountUserName">Account Username</label><br> <!---accountUserName-->
-                <!--<input type="text" id="accountUsername" name="accountUsername" class="rectangle27"><br><br> <!---rectangle27-->
-                <!--<label for="email" class="email">Email</label><br> <!---email-->
-                <!--<input type="text" id="email" name="email" class="rectangle28"><br><br> <!---rectangle28-->
-                <!--<label for="password" class="password">Password</label><br><!---password-->
-                <!--<input type="password" id="password" name="password" class="rectangle29"><br><br><!---rectangle29-->
-                <!--<label for="rePassword" class = "reEnterPassword">Re-enter Password</label><br><!---reEnterPassword-->
-                <!--<input type="password" id="rePassword" name="rePassword" class="rectangle30"><br><br><!---rectangle30-->
-                <!--<label for="Account Type" class="accountType">Account Type</label><br><!---accountType-->
-                <!--<select name="type" id="type" class="type"><!---organizer-->
-<!--                    <option value="organizer">Organizer</option>
-
-                    <option value="volunteer">Volunteer</option>
-                </select><br><br>
-                                                       <button id="testButton" class="createAccount">Create Account</button>
-                <!--<input type="submit" value="Create Account" class="createAccount" onclick="creatAccount()"><br><br><!---createAccount-->
-            <!--</form>-->
-                                         
-                                         <!-- </div> -->
-
-        <!--<div data-layer="6c9f7d04-d76d-4dea-b011-470f71437911" class="rectangle25"></div>
-        <div data-layer="70db02dc-3ede-4b51-b66c-55c455ed4330" class="rectangle26"></div>
-        <div data-layer="b6874388-e08d-4d28-a643-ca8c2c543b10" class="rectangle27"></div>
-        <div data-layer="01197487-0083-4be8-8736-2ba1d9646c3d" class="rectangle28"></div>
-        <div data-layer="82fa1815-9a0c-4d86-b63e-34eddaeee66f" class="rectangle29"></div>
-        <div data-layer="23c9ffaa-de0d-458d-851c-d2b564a413f9" class="rectangle30"></div>
-        <div data-layer="9b0b6753-67c2-4fa9-8d1b-f79d7fa03884" class="rectangle31"></div>
-        <div data-layer="700002ae-63da-4f3d-8a12-c0e010694542" class="rectangle32"></div>
-        <div data-layer="8bea3558-9051-442a-9ea7-0ce200e3ede7" class="name">Name</div>
-        <div data-layer="614d639b-6bfc-44fb-ab28-710e7f203a52" class="accountUserName">Account User Name</div>
-        <div data-layer="8904b305-5050-40ac-bc1f-f5869230a927" class="email">Email</div>
-        <div data-layer="9b32fdb8-b140-48fa-b04c-c242aef1bcc9" class="password">Password</div>
-        <div data-layer="76d8b6b6-b3ec-453a-af2e-dfd18f41d548" class="reEnterPassword">Re-enter Password</div>
-        <div data-layer="85cdb0ae-1a1f-4788-a8bb-045a9f5f46da" class="accountType">Account Type</div>
-        <div data-layer="d5ffed2e-e699-4eb9-9fe3-dc35041581de" class="volunteer">Volunteer</div>
-        <div data-layer="29ecc47a-ffec-4f20-a348-2b34361c0fce" class="organizer">Organizer</div>
-        <div data-layer="a772dabd-d7ad-46ef-9614-931dfe31eeae" class="rectangle88"></div>
-        <div data-layer="68864466-970e-4511-907b-caa97085d87c" class="createAccount">Create Account</div>
-</div>-->
-
-                           <!--
-        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-                           <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-                           <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
-                           <script src="createAccount.js"></script> -->
     </body>
     </html>
