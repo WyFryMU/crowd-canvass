@@ -36,7 +36,7 @@
 		if(firebaseUser){
 			console.log(firebaseUser);
 			console.log(firebaseUser.uid);
-			// Add a new document in collection "cities"
+			// Add a new document in collection "users"
 			firebase.firestore().collection("users").doc(firebaseUser.uid).set({
 				name: txtName.value,
 				username: txtAccountUserName.value,
