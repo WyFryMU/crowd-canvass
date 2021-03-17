@@ -16,6 +16,14 @@
         -ms-overflow-style: none;
         background-color: rgb(229, 229, 229);
       }
+	  p{
+		margin: 0 auto;
+        width:fit-content;
+        margin-top: 5%;
+        border: 5px solid rgba(255, 164, 73, 1);
+        padding: 50px;
+        align-items: center;
+	  }
       form{
             
         margin: 0 auto;

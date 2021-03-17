@@ -12,7 +12,7 @@
 		
 	firebase.initializeApp(firebaseConfig);
 	//get elements
-	const logout = document.getElementById("payVolunteer");
+	const logout = document.getElementById("pay");
 	
 	//logout event
 	logout.addEventListener('click', e => {

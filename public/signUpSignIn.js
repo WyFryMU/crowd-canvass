@@ -13,14 +13,14 @@
 	firebase.initializeApp(firebaseConfig);
 	//get elements
 	const signIn = document.getElementById("signIn");
-	const dontHaveAnAccountSignUp = document.getElementById("dontHaveAnAccountSignUp");
-	const emailaccountUserName = document.getElementById("emailaccountUserName");
+	//const dontHaveAnAccountSignUp = document.getElementById("dontHaveAnAccountSignUp");
+	const txtEmail = document.getElementById("email");
 	const txtPassword = document.getElementById("password");
 	
 	//signup event
 	signIn.addEventListener('click', e => {
 		//get email and password
-		const email = emailaccountUserName.value;
+		const email = txtEmail.value;
 		const pass = txtPassword.value;
 		const auth = firebase.auth();
 		//sign in
@@ -28,9 +28,9 @@
 		promise.catch(e => console.log(e.message));
 	});
 	
-	dontHaveAnAccountSignUp.addEventListener('click', e => {
+	/*dontHaveAnAccountSignUp.addEventListener('click', e => {
 		window.location.href = "createAnAccount.html";
-	});
+	});*/
 	
 	//add realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
