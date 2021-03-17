@@ -16,6 +16,10 @@
 	const txtPassword = document.getElementById("password");
 	const btnCreateAccount = document.getElementById("testButton");
 	
+	const txtName = document.getElementById("name");
+	const txtAccountUserName = document.getElementById("accountUsername");
+	const selectType = document.getElementById("type");
+	
 	//signup event
 	btnCreateAccount.addEventListener('click', e => {
 		//get email and password
@@ -31,7 +35,21 @@
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			console.log(firebaseUser);
-			window.location.href = "accountMainPageAfterSignIn.html";
+			console.log(firebaseUser.uid);
+			// Add a new document in collection "cities"
+			firebase.firestore().collection("users").doc(firebaseUser.uid).set({
+				name: txtName.value,
+				username: txtAccountUserName.value,
+				accountType: selectType.value
+			})
+			.then(() => {
+				console.log("Document successfully written!");
+				window.location = "accountMainPageAfterSignIn.html";
+			})
+			.catch((error) => {
+				console.error("Error writing document: ", error);
+			});
+			
 		}else{
 			console.log("not logged in");
 		}

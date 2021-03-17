@@ -23,6 +23,7 @@
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			console.log(firebaseUser);
+			console.log(firebaseUser.uid);
 			//window.location.href = "accountMainPageAfterSignIn.html";
 		}else{
 			console.log("not logged in");
