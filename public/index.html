@@ -78,70 +78,163 @@
 			var home = document.getElementById("home");
 			var finances = document.getElementById("finances");
 			var login = document.getElementById("login");
-			var createACanvassevent = document.getElementById("createACanvassevent");
-			var createAcommunityserviceEvent = document.getElementById("createAcommunityserviceEvent");
+			var orangecloud1 = document.getElementById("orangecloud1");
+			var orangecloud2 = document.getElementById("orangecloud2");
 			//console.log(account);
 		
 			home.onclick = function() {
-				window.location.href = "accountMainPageAfterSignIn.html";
+				//  window.location.href = "accountMainPageAfterSignIn.html"; 
+        window.location.href = "signUpsignIn.html";
 			}
 			finances.onclick = function() {
-				window.location.href = "financePage.html";
+				//window.location.href = "financePage.html";
+        window.location.href = "signUpsignIn.html";
 			}
 			analysis.onclick = function() {
-				window.location.href = "analysisPage.html";
+				//window.location.href = "analysisPage.html";
+        window.location.href = "signUpsignIn.html";
 			}
 			login.onclick = function() {
 				window.location.href = "signUpsignIn.html";
 			}
-			createACanvassevent.onclick = function() {
-				window.location.href = "createACanvassEvent.html";
+			orangecloud1.onclick = function() {
+				//window.location.href = "createACanvassEvent.html";
+        window.location.href = "signUpsignIn.html";
 			}
-			createAcommunityserviceEvent.onclick = function() {
-				window.location.href = "createAServiceEvent.html";
+			orangecloud2.onclick = function() {
+				//window.location.href = "createAServiceEvent.html";
+        window.location.href = "signUpsignIn.html";
 			}
+
+      orangecloud1.onclick = function(){
+        window.location.href = "createACanvassEvent.html";
+      }
+
+      orangecloud2.onclick = function(){
+        window.location.href = "createAServiceEvent.html";
+      }
 		}
 		</script>
-	
-        <div data-layer="597cc4eb-af9b-427d-a04d-e03c5c41f862" class="mainScreen">
-		<!--<div data-layer="9f184156-cda9-453e-9d6a-106e579f7779" class="rectangle1"></div>-->
-        <div data-layer="1f7ee413-33ed-4e81-bc7a-dd0fe33ae034" class="rectangle5"></div>
-        <div data-layer="400a7952-4c39-442f-9e50-0745129c3e0f" class="rectangle6"></div>
-        <div data-layer="014ff19e-ff57-495b-b9ed-e597bed292d6" class="rectangle7"></div>
-        <div data-layer="2af61460-23c8-46d8-8330-f271cea8baf0" class="rectangle8"></div>
-        <div data-layer="0e202b29-5d3a-4f17-9ecf-d48e492fc412" class="login" id="login">LOGIN</div>
-        <div data-layer="6f0e247c-706c-4d85-9fcf-c344a93d71ef" class="home" id="home">Home</div>
-        <div data-layer="5196591f-0e4f-42a0-9c92-461153b316b7" class="analysis" id="analysis">Analysis</div>
-        <div data-layer="6efb73a6-fa03-48b5-83d5-99f26e44db62" class="finances" id="finances">Finances</div>
-        <div data-layer="f361954d-be19-42a9-96e4-4bc240191765" class="rectangle9"></div>
-        <div data-layer="342b9e6f-987b-4f77-b737-1b961933d68c" class="component11">
-		<svg data-layer="daa4fd01-e8c5-49d3-ac9a-831a12a3ebd8" preserveAspectRatio="none" viewBox="0 0 115.99710083007812 113.86627197265625" class="path1"><path d="M 58.17688369750977 0 L 115.9971008300781 113.699462890625 L 0 113.8662872314453 L 58.17688369750977 0 Z"  /></svg>
-</div>
-        <svg data-layer="be1f3e11-fcfb-4100-83ad-60b184fd653b" preserveAspectRatio="none" viewBox="0 0 116 107" class="polygon2"><path d="M 57.99999618530273 0 L 116 107 L 0 107 Z"  /></svg>
-        <svg data-layer="caf3392a-326d-4ea5-994f-b6ea7e7d399e" preserveAspectRatio="none" viewBox="0 0 123 106.99993896484375" class="polygon3"><path d="M 61.49999618530273 0 L 123 106.9999923706055 L 0 106.9999923706055 Z"  /></svg>
-        <div data-layer="f711e0e9-0e03-4820-a712-fbc0a7930577" class="rectangle10"></div>
-        <div data-layer="1cceb147-1498-47ba-a28d-289e7a78c297" class="rectangle11"></div>
-		<!--<div data-layer="2d310bce-5cea-4086-a37b-415676d292fb" class="crowdcanvasscom">Crowdcanvass.com</div>
-        <svg data-layer="784b7415-1b55-4202-96e2-c7276d445edb" preserveAspectRatio="none" viewBox="-0.7500000000000036 -0.7499999969482438 55.5 32.49959945678711" class="subtraction2"><path d="M 54 30.99959945678711 L -3.552713678800501e-15 30.99959945678711 L -3.552713678800501e-15 3.051756181093879e-09 L 54 3.051756181093879e-09 L 54 30.99860000610352 L 54 30.99959945678711 Z M 26.05175018310547 3.875469923019409 C 25.23361968994141 3.875530004501343 24.42292022705078 4.087419986724854 23.76899909973145 4.472099781036377 L 8.588700294494629 13.40460014343262 C 7.752620220184326 13.8963098526001 7.270410060882568 14.6028995513916 7.265699863433838 15.34319972991943 C 7.261940002441406 15.86489963531494 7.49783992767334 16.34758949279785 7.94789981842041 16.73909950256348 C 8.13971996307373 16.90605926513672 8.363189697265625 17.04990005493164 8.612099647521973 17.16659927368164 L 25.63649940490723 27.3213005065918 C 25.79562950134277 27.41625022888184 26.00093078613281 27.46439933776855 26.24670028686523 27.46439933776855 C 26.98167037963867 27.46439933776855 27.95140075683594 27.03517913818359 28.71719932556152 26.37089920043945 C 29.37787055969238 25.79750061035156 29.77453994750977 25.14983940124512 29.77829933166504 24.63839912414551 C 29.77923011779785 24.36412048339844 29.66313934326172 24.14937973022461 29.44260025024414 24.01740074157715 L 18.92880058288574 17.74620056152344 L 44.72999954223633 17.74620056152344 C 45.98157119750977 17.74620056152344 46.99980163574219 16.72797012329102 46.99980163574219 15.47640037536621 C 46.99980163574219 14.22482967376709 45.98157119750977 13.20660018920898 44.72999954223633 13.20660018920898 L 18.97559928894043 13.20660018920898 L 27.82080078125 8.001899719238281 C 28.6574592590332 7.509850025177002 29.13999938964844 6.80325984954834 29.14469909667969 6.063300132751465 C 29.14846038818359 5.541600227355957 28.91255950927734 5.058909893035889 28.46249961853027 4.667399883270264 C 27.8837890625 4.164060115814209 27.0051097869873 3.875410079956055 26.05175018310547 3.875469923019409 Z"  /></svg> -->
-        <div data-layer="0e7596c2-4cd9-4e3f-b2ec-7b00b778ef59" class="repeatGrid1">            
-			<svg data-layer="85a4c234-b93a-4a5e-87e1-b92c47265b08" preserveAspectRatio="none" viewBox="-0.75 -0.75 491.402587890625 250.32012939453125" class="path77493fb2df"><path d="M 77.30989074707031 0 L 406.5927429199219 0 C 449.289794921875 0 483.9026184082031 37.57965850830078 483.9026184082031 83.93651580810547 C 483.9026184082031 83.93651580810547 483.9026184082031 107.2324371337891 483.9026184082031 124.7192077636719 C 483.9026184082031 142.2059783935547 483.9026184082031 153.8836212158203 483.9026184082031 153.8836212158203 C 483.9026184082031 200.240478515625 449.289794921875 237.8201293945313 406.5927429199219 237.8201293945313 C 406.5927429199219 237.8201293945313 325.7929992675781 227.3633117675781 243.4722900390625 227.3633117675781 C 161.1515655517578 227.3633117675781 77.30989074707031 237.8201293945313 77.30989074707031 237.8201293945313 C 34.61281585693359 237.8201293945313 0 200.240478515625 0 153.8836212158203 L 0 83.93651580810547 C 0 37.57965850830078 34.61281585693359 0 77.30989074707031 0 Z"  /></svg>
-            <svg data-layer="0ecbf747-e354-401f-9741-ac2751e10e03" preserveAspectRatio="none" viewBox="-0.75 -0.75 491.402587890625 250.32012939453125" class="path77881f4473"><path d="M 77.30989074707031 0 L 406.5927429199219 0 C 449.289794921875 0 483.9026184082031 37.57965850830078 483.9026184082031 83.93651580810547 C 483.9026184082031 83.93651580810547 483.9026184082031 107.2324371337891 483.9026184082031 124.7192077636719 C 483.9026184082031 142.2059783935547 483.9026184082031 153.8836212158203 483.9026184082031 153.8836212158203 C 483.9026184082031 200.240478515625 449.289794921875 237.8201293945313 406.5927429199219 237.8201293945313 C 406.5927429199219 237.8201293945313 325.7929992675781 227.3633117675781 243.4722900390625 227.3633117675781 C 161.1515655517578 227.3633117675781 77.30989074707031 237.8201293945313 77.30989074707031 237.8201293945313 C 34.61281585693359 237.8201293945313 0 200.240478515625 0 153.8836212158203 L 0 83.93651580810547 C 0 37.57965850830078 34.61281585693359 0 77.30989074707031 0 Z"  /></svg>
-            <svg data-layer="29b0c436-b0e5-46bd-b71c-958d63ebc469" preserveAspectRatio="none" viewBox="-0.75 -0.75 491.402587890625 250.32012939453125" class="path77"><path d="M 77.30989074707031 0 L 406.5927429199219 0 C 449.289794921875 0 483.9026184082031 37.57965850830078 483.9026184082031 83.93651580810547 C 483.9026184082031 83.93651580810547 483.9026184082031 107.2324371337891 483.9026184082031 124.7192077636719 C 483.9026184082031 142.2059783935547 483.9026184082031 153.8836212158203 483.9026184082031 153.8836212158203 C 483.9026184082031 200.240478515625 449.289794921875 237.8201293945313 406.5927429199219 237.8201293945313 C 406.5927429199219 237.8201293945313 325.7929992675781 227.3633117675781 243.4722900390625 227.3633117675781 C 161.1515655517578 227.3633117675781 77.30989074707031 237.8201293945313 77.30989074707031 237.8201293945313 C 34.61281585693359 237.8201293945313 0 200.240478515625 0 153.8836212158203 L 0 83.93651580810547 C 0 37.57965850830078 34.61281585693359 0 77.30989074707031 0 Z"  /></svg>
-	
-</div>
-        <div data-layer="3902a861-dc62-4534-a818-26e9dab5372a" class="createACanvassevent" id=createACanvassevent>Create a Canvass<br />Event</div>
-        <div data-layer="c8e77d38-5174-4d48-96bf-48fa2a2cc1b7" class="createAcommunityserviceEvent" id=createAcommunityserviceEvent>Create a<br />Community<br />Service Event</div>
-        <div data-layer="c6ee7377-a326-452a-8f27-12a56cff2efb" class="communityvolunteerportal">Community<br />Volunteer<br />Portal</div>
-        <svg data-layer="99d66e1a-7541-410d-bf1d-4b1b4c89144e" preserveAspectRatio="none" viewBox="-0.75 -0.75 950.9207763671875 659.448486328125" class="path78"><path d="M 150.7240600585938 0 L 792.69677734375 0 C 875.9393310546875 0 943.4207763671875 102.2289505004883 943.4207763671875 228.3347473144531 C 943.4207763671875 228.3347473144531 943.4207763671875 291.7073059082031 943.4207763671875 339.2770080566406 C 943.4207763671875 386.8467712402344 943.4207763671875 418.61376953125 943.4207763671875 418.61376953125 C 943.4207763671875 544.7195434570313 875.9393310546875 646.948486328125 792.69677734375 646.948486328125 C 792.69677734375 646.948486328125 635.1689453125 618.5025024414063 474.6757202148438 618.5025024414063 C 314.1825256347656 618.5025024414063 150.7240600585938 646.948486328125 150.7240600585938 646.948486328125 C 67.4814453125 646.948486328125 0 544.7195434570313 0 418.61376953125 L 0 228.3347473144531 C 0 102.2289505004883 67.4814453125 0 150.7240600585938 0 Z"  /></svg>
-        <div data-layer="ddf85733-ac3b-4805-ad9a-245cc256d0d9" class="image5"></div>
-        <div data-layer="cf044319-8da7-494d-b3f6-43fb6ef38268" class="eventsInYourArea">Events in your area</div>
-        <div data-layer="5796c96b-cfc2-4a0b-8eaf-0a9e2ca154b2" class="mainScreenDe4f6400dbb5"></div>
-        <div data-layer="774f905f-d3e0-445f-9145-7a7efca8bbdf" class="capture"></div>
-        <div data-layer="444f7522-c698-40de-8ceb-f2406db787fe" class="welcomeToCrowdCanvass">Welcome to Crowd Canvass</div>
-        <div data-layer="5e0f4de1-db04-4f56-ba70-1cb4fd8826a3" class="mainScreenC54f0f3fe6a2"></div>
-        <div data-layer="ee6547e4-642a-4bb7-a10c-576d5fd1c01c" class="contactUsCrowdcanvass">Contact us: crowdcanvass@gmail  |  Support: 414-585-1200</div>
-        <div data-layer="100caa2b-a528-413d-aaac-3a3f719ae783" class="info">Info:</div>
-</div>
+
+  
+
+    <script>
+
+      
+    </script>
+
+
+    <style>
+      .column{
+        width: 33.33%; 
+        padding: 0px;
+        padding-top: 40px;
+      }
+
+      .row::after{
+        content: "";
+        clear: both;
+        display:table
+      }
+
+      .button{
+        background-color: rgba(255,164,73,1);
+        border: solid;
+        border-radius: 20% 24%;
+        border-color: darkgray;
+        border-width: 2px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+      }
+
+      .clickable:hover{
+        cursor: pointer;
+      }
+
+      .orangecloud2:hover{
+        cursor: pointer;
+      }
+
+    </style>
+
+        <header style="position:fixed;top:0;">
+            <div class="container">
+                <img src="assets/capture.png" alt="logo" class="logo"/>
+
+                <nav>
+                    <ul>
+                        <li><a class="Finances" id="finances">Finances</a></li>
+                        <li><a class="Analysis" id="analysis">Analysis</a></li>
+                        <li><a class="Home" id="home">Home</a></li>
+                        <li><a class="login" id="login" style="float:right;margin-right:0px; font-size:14px; margin-left:48px;margin-top:6px;">SignUp/SignIn</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <section class="welcome" style="padding-top: 110px; margin:0% 5%; margin-bottom: 5%;">
+            <h1>Welcome to Crowd Canvass</h1>
+
+            <h2 style="margin: auto; padding-top: 15px;">Where Community Meets Service</h2>
+
+            <div class = "row">
+              <div class="column" style="float: left;">
+                <img src="assets/digitalsurvey1.jpg" alt="surveycartoon" logo="surveycartoon"
+                style="float: left; width: 198px; height: auto; padding-left: 30px; padding-top: 80px; margin: 0;"/>
+
+              </div>
+              <div class="column" style="float:right;">
+                <img src="assets/canvassing.jpg" alt = "canvassing" logo="canvassing" 
+                  style="height: auto; width: 340px; float: right; border-radius: 32%; padding-top: 0px;
+                    padding-right: 20px; margin-bottom: 10px; margin-left: 0;"/>
+              </div>
+              <div class="column" style="float: right;">
+              <div class="clickable">
+                <img src="assets/orangecloud.png" alt="orangecloud1" logo="orangecloud1" id="orangecloud1"
+                  style="padding-top: 10px; padding-bottom: 7px; float: right; padding-left: 690px;"/>
+                  <p>Create A Canvass Event</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column" style="float: left;">
+                <img src="assets/community_service.jpg" alt="service" logo="service" style="height: auto;
+                  width: 350px; float: left; padding-top: 0px; padding-left: 15px;
+                  border-radius: 35%; margin-top: 10px;"/>
+
+              </div>
+              <div class="column" style="float: left;">
+              <div class="clickable">
+                <img src="assets/orangecloud.png" alt="orangecloud2" logo="orangecloud2" id="orangecloud2"
+                  style=" padding-top: 0px; padding-bottom: 0; "/>
+                  <p>Create A Community Service Event</p>
+              </div>
+              </div>
+              <div class="column" style="float: right;">
+                  <img src="assets/image5.png" alt="map" logo="map" style="float: right;
+                  width: 389px; height: auto; padding-bottom: 8px; padding-left: 20px; margin: auto;"/>
+                <a href="#" class="button" style="float:right; padding-top: 5px;
+                  padding-bottom: 10px; margin: auto;">Click To See Events in Your Area</a>
+              </div>
+              
+            </div>
+    
+            
+        </section>
+
+
+      <footer class="contact" style="background-color: ivory; width: 100%; height: 75px;">
+        <h6 style="float: left;">Contact Us At:</h6>
+      </footer>
 
 
     </body>
