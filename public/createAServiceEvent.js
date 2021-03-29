@@ -1,5 +1,5 @@
 (function() {
-	console.log("loaded createCanvassEvent script");
+	console.log("loaded createServiceEvent script");
 	const firebaseConfig = {
 		apiKey: "AIzaSyAgEK90feSQbkemjfXMCWwTh-Mid7lAq1Y",
 		authDomain: "crowdcanvass.firebaseapp.com",
@@ -32,7 +32,7 @@
 			//signup event
 			btnCreateACanvassEvent.addEventListener('click', e => {
 			// Add a new document in collection "users"
-			firebase.firestore().collection("canvassEvents").add({
+			firebase.firestore().collection("serviceEvents").add({
 				userID: firebaseUser.uid,
 				amountPaid: amountPaid.value,
 				routesCanvassed: routesCanvassed.value,
