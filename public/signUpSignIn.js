@@ -13,6 +13,7 @@
 	firebase.initializeApp(firebaseConfig);
 	//get elements
 	const signIn = document.getElementById("signIn");
+	const forgotPasswordBtn = document.getElementById("forgotPassword");
 	//const dontHaveAnAccountSignUp = document.getElementById("dontHaveAnAccountSignUp");
 	const txtEmail = document.getElementById("email");
 	const txtPassword = document.getElementById("password");
@@ -26,6 +27,21 @@
 		//sign in
 		const promise = auth.signInWithEmailAndPassword(email,pass);
 		promise.catch(e => console.log(e.message));
+	});
+
+	//forgot password event
+	forgotPasswordBtn.addEventListener('click', e => {
+		//get email and password
+		if(email.value == ""){
+			alert("Please enter your email then click forgot password.");
+		}else{
+		const email = txtEmail.value;
+		const auth = firebase.auth();
+		//sign in
+		const promise = auth.sendPasswordResetEmail(email);
+		promise.catch(e => console.log(e.message));
+		alert("Check your email to reset your password.");
+		}
 	});
 	
 	/*dontHaveAnAccountSignUp.addEventListener('click', e => {
