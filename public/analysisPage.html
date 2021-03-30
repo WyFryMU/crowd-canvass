@@ -5,66 +5,99 @@
         <meta charset="utf-8">
         <title>Analysis Page</title>
         
-        <link rel="stylesheet" href="analysisPage.css">
+        <!--<link rel="stylesheet" href="analysisPage.css"> dont need -->
+        <!--Add new links-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            html{
+                  width: 100%;
+                  background-color: darkgray;
+              }
+              .navbar {
+                  margin-bottom: 0;
+              }
+              /* Modify the background color */
+              .navbar-custom {
+                  background-color: orange;
+              }
+              /* Modify brand and text color */
+              .navbar-custom .navbar-brand,
+              .navbar-custom .navbar-text {
+                  color: black;
+              }
+              /*        .navbar-custom .navbar-nav > li > a:focus */
+              .navbar-custom .navbar-nav > li > a:hover {
+                  background-color: white;
+              }
+              .sidenav{
+                  background-color: darkgray;
+                  height: 100%;
+              }
+              .row.content{
+                  height: 700px;
+                  padding-top: 50px;
+              }
+              /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
+              footer{
+                  background-color: ivory;
+                  padding: 15px;
+                  color:red;
+              }
+        </style>
+ 
     </head>
 
-    <body>
-		<script>
-		window.onload = function () {
-			var accountXxx = document.getElementById("accountXxx");
-			var home = document.getElementById("home");
-			var finances = document.getElementById("finances");
-			var analysis = document.getElementById("analysis");
-		
-			accountXxx.onclick = function() {
-				window.location.href = "accountManage.html";
-			}
-			home.onclick = function() {
-				window.location.href = "accountMainPageAfterSignIn.html";
-			}
-			finances.onclick = function() {
-				window.location.href = "financePage.html";
-			}
-			analysis.onclick = function() {
-				window.location.href = "analysisPage.html";
-			}
-		}
-		</script>
+    <body style="background-color: lightgray;">
+        <!--Generate Navbar-->
+        <nav class="navbar navbar-custom navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
 
-
-<header style="position:fixed;top:0;">
-    <div class="container">
-        <img src="assets/capture.png" alt="logo" class="logo"/>
-
-        <nav>
-            <ul>
-                <li><a class="Finances" id="finances">Finances</a></li>
-                <li><a class="Analysis" id="analysis">Analysis</a></li>
-                <li><a class="Home" id="home">Home</a></li>
-                <li><a class="login" id="accountXxx" style="float:right;margin-right:0px; font-size:14px; margin-left:48px;margin-top:6px;">Account</a></li>
+                <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="accountMainPageAfterSignIn.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
+                <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
+                <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="accountManage.html" style="color: black;" id="account"><span class="glyphicon glyphicon-user"></span> Account</a></li> <!--Need to update ID once new webpage is made-->
+                <li><a href="#" style="color: black;" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+            </div>
         </nav>
+        <!--Generate the body or webpage-->
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
 
-    </div>
-</header>
+                </div>
+                <div class="col-sm-8">
+                    <h3>Analysis</h3>
+                    <div class="row">
+                        <div class="col-sm-6" style="margin-top: 6%;">
+                            <img src="assets/image6.png" alt="bargraph" id="bargraph" style="height: auto; width: 80%;">
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 6%;">
+                            <img src="assets/image7.png" alt="feedback" id="feedback" style="height: auto; width: 75%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 sidenav"></div>
+            </div>
+        </div>
+        <!--Add footer element if wanted-->
+        <footer class="containier-fluid text-left">
+            <h6>Contact Us At:</h6>
+          </footer>
+        <!--Script functions go on the bottom of the body-->
+		
 
-
-<section class="analysis1">
-    <h1>Analysis</h1>
-
-    <section class="images">
-        <img src="assets/image6.png" alt="bargraph" id="bargraph" style="width: 415px; height: auto;">
-
-        <img src="assets/image7.png" alt="feedback" id="feedback" style="width: 390px; height: auto;">
-    </section>
-
-</section>
-
-
-<footer class="contact" style="background-color: ivory; width: 100%; height: 75px; bottom: 0;">
-    <h6 style="float: left;">Contact Us At:</h6>
-  </footer>
-	    
     </body>
     </html>
             

@@ -3,168 +3,152 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Crowd Canvass Web App</title>
-        <link rel="stylesheet" href="mainScreen.css">
+        <title>Crowd Canvass Welcomes</title>
+        <!--<link rel="stylesheet" href="mainScreen.css"> don't need this anymore -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+          html{
+              width: 100%;
+              background-color: darkgray;
+          }
+          .navbar {
+              margin-bottom: 0;
+          }
+          /* Modify the background color */
+          .navbar-custom {
+              background-color: orange;
+          }
+          /* Modify brand and text color */
+          .navbar-custom .navbar-brand,
+          .navbar-custom .navbar-text {
+              color: black;
+          }
+          /*        .navbar-custom .navbar-nav > li > a:focus */
+          .navbar-custom .navbar-nav > li > a:hover {
+              background-color: white;
+          }
+          .sidenav{
+              background-color: darkgray;
+              height: 100%;
+          }
+          .row.content{
+              height: 1485px;
+              padding-top: 50px;
+          }
+          /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
+          footer{
+              background-color: ivory;
+              padding: 15px;
+              color:red;
+          }
+          /*tell curser to be pointer when hovering the other items*/
+
+        </style>
+
     </head>
 
-    <body>
-		<script>
-		window.onload = function () {
-			var analysis = document.getElementById("analysis");
-			var home = document.getElementById("home");
-			var finances = document.getElementById("finances");
-			var login = document.getElementById("login");
-			var orangecloud1 = document.getElementById("orangecloud1");
-			var orangecloud2 = document.getElementById("orangecloud2");
-			//console.log(account);
+    <body style="background-color: lightgray;">
 		
-		home.onclick = function() {
-				//  window.location.href = "accountMainPageAfterSignIn.html"; 
-        window.location = "signUpsignIn.html";
-			}
-			finances.onclick = function() {
-				//window.location.href = "financePage.html";
-        window.location = "signUpsignIn.html";
-			}
-			analysis.onclick = function() {
-				//window.location.href = "analysisPage.html";
-        window.location = "signUpsignIn.html";
-			}
-			login.onclick = function() {
-				window.location.href = "signUpsignIn.html";
-			}
-			orangecloud1.onclick = function() {
-				//window.location.href = "createACanvassEvent.html";
-        window.location = "signUpsignIn.html";
-			}
-			orangecloud2.onclick = function() {
-				//window.location.href = "createAServiceEvent.html";
-        window.location = "signUpsignIn.html";
-			}
 
-      orangecloud1.onclick = function(){
-        window.location = "createACanvassEvent.html";
-      }
+<!--background-color: rgba(255,164,73,1);  this is the orange-->
 
-      orangecloud2.onclick = function(){
-        window.location = "createAServiceEvent.html";
-      }
-		}
-		</script>
+    <!--Navbar creation-->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
 
+          <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li>
+          <li><a href="#" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
+          <li><a href="#" style="color: black;" id="analysis">Analysis  </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" style="color: black;" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> <!--Need to update ID once new webpage is made-->
+          <li><a href="#" style="color: black;" id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <style>
-      .column{
-        width: 33.33%; 
-        padding: 0px;
-        padding-top: 40px;
-      }
-
-      .row::after{
-        content: "";
-        clear: both;
-        display:table
-      }
-
-      .button{
-        background-color: rgba(255,164,73,1);
-        border: solid;
-        border-radius: 20% 24%;
-        border-color: darkgray;
-        border-width: 2px;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        
-      }
-
-      .clickable:hover{
-        cursor: pointer;
-      }
-
-      .orangecloud2:hover{
-        cursor: pointer;
-      }
-
-    </style>
-
-        <header style="position:fixed;top:0;">
-            <div class="container">
-                <img src="assets/capture.png" alt="logo" class="logo"/>
-
-                <nav>
-                    <ul>
-                        <li><a class="Finances" id="finances">Finances</a></li>
-                        <li><a class="Analysis" id="analysis">Analysis</a></li>
-                        <li><a class="Home" id="home">Home</a></li>
-                        <li><a class="login" id="login" style="float:right;margin-right:0px; font-size:14px; margin-left:48px;margin-top:6px;">SignUp/SignIn</a></li>
-                    </ul>
-                </nav>
-
-            </div>
-        </header>
-
-        <section class="welcome" style="padding-top: 110px; margin:0% 5%; margin-bottom: 5%;">
-            <h1>Welcome to Crowd Canvass</h1>
-
-            <h2 style="margin: auto; padding-top: 15px;">Where Community Meets Service</h2>
-
-            <div class = "row">
-              <div class="column" style="float: left;">
-                <img src="assets/digitalsurvey1.jpg" alt="surveycartoon" logo="surveycartoon"
-                style="float: left; width: 198px; height: auto; padding-left: 30px; padding-top: 80px; margin: 0;"/>
-
-              </div>
-              <div class="column" style="float:right;">
-                <img src="assets/canvassing.jpg" alt = "canvassing" logo="canvassing" 
-                  style="height: auto; width: 340px; float: right; border-radius: 32%; padding-top: 0px;
-                    padding-right: 20px; margin-bottom: 10px; margin-left: 0;"/>
-              </div>
-              <div class="column" style="float: right;">
-              <div class="clickable">
-                <img src="assets/orangecloud.png" alt="orangecloud1" logo="orangecloud1" id="orangecloud1"
-                  style="padding-top: 10px; padding-bottom: 7px; float: right; padding-left: 690px;"/>
-                  <p>Create A Canvass Event</p>
+    <!-- Make the body elements -->
+    <div class="container-fluid text-center">
+      <div class="row content">
+          <div class="col-sm-2 sidenav">
+          </div>
+          <div class="col-sm-8 text-center">
+              <h1>Welcome to Crowd Canvass</h1>
+              <h3>Where Community meet Service</h3>
+              <hr>
+              <div class="row">
+                  <div class="col-sm-6">
+                      <button style="background-color: orange; border-radius: 4px; margin: 15% 0; margin-top:30%; float: right; font-size: x-large;" id="canvass"> <span class="glyphicon glyphicon-list-alt"></span> Create a Canvass Event </button>
+                      <br>
+                      <img src="assets/community_service.jpg" class="img-circle" style="height: auto; width: 90%; margin: 15% 0;" id="commserv"> <!--Might want to add an id-->
+                  </div>
+                  <div class="col-sm-6">
+                      <img src="assets/canvassing.jpg" class="img-circle" style="height: auto; width: 90%; margin: 15% 0;" id="canvass">
+                      <!--Position may need to become static-->
+                      <br>
+                      <button style="border-radius: 4px; background-color: orange; margin: 15% 0; float: left; font-size: x-large;" id="commserv"> Create a Community Service Event <span class="glyphicon glyphicon-globe"></span> </button>
                   </div>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="column" style="float: left;">
-                <img src="assets/community_service.jpg" alt="service" logo="service" style="height: auto;
-                  width: 350px; float: left; padding-top: 0px; padding-left: 15px;
-                  border-radius: 35%; margin-top: 10px;"/>
-
-              </div>
-              <div class="column" style="float: left;">
-              <div class="clickable">
-                <img src="assets/orangecloud.png" alt="orangecloud2" logo="orangecloud2" id="orangecloud2"
-                  style=" padding-top: 0px; padding-bottom: 0; "/>
-                  <p>Create A Community Service Event</p>
-              </div>
-              </div>
-              <div class="column" style="float: right;">
-                  <img src="assets/image5.png" alt="map" logo="map" style="float: right;
-                  width: 389px; height: auto; padding-bottom: 8px; padding-left: 20px; margin: auto;"/>
-                <a href="#" class="button" style="float:right; padding-top: 5px;
-                  padding-bottom: 10px; margin: auto;">Click To See Events in Your Area</a>
-              </div>
-              
-            </div>
-    
-            
-        </section>
+              <hr>
+              <h2>View Crowd Canvass Events within your area.</h2>
+              <!--Insert image of the map-->
+              <img src="assets/image5.png" id="map" style="width: 90%; height: auto; margin-bottom: 2%;">
+          </div>
+          <div class="col-sm-2 sidenav">
+          </div>
+      </div>
+  </div>
 
 
-      <footer class="contact" style="background-color: ivory; width: 100%; height: 75px;">
-        <h6 style="float: left;">Contact Us At:</h6>
+      <footer class="container-fluid text-left">
+        <h6>Contact Us At:</h6>
       </footer>
 
+      <!--script used for links-->
+      <script>
+        window.onload = function () {
+          var analysis = document.getElementById("analysis");
+          var home = document.getElementById("home");
+          var finances = document.getElementById("finances");
+          var login = document.getElementById("login");
+          var commserv = document.getElementById("commserv");
+          var canvass = document.getElementById("canvass");
+          var signup = document.getElementById("signup");
+          //console.log(account);
+        
+        home.onclick = function() {
+            window.location = "signUpsignIn.html";
+          }
+          finances.onclick = function() {
+            window.location = "signUpsignIn.html";
+          }
+          analysis.onclick = function() {
+            window.location = "signUpsignIn.html";
+          }
+          login.onclick = function() {
+            window.location.href = "signUpsignIn.html";
+          }
+          canvass.onclick = function() {
+            window.location = "signUpsignIn.html";
+          }
+          commserv.onclick = function() {
+            window.location = "signUpsignIn.html";
+          }
+          signup.onclick = function(){
+            window.location = "createAnAccount.html"
+          }
+    
+        }
+        </script>
 
     </body>
     </html>
