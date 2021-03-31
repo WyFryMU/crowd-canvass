@@ -12,11 +12,12 @@
 		
 	firebase.initializeApp(firebaseConfig);
 	//get elements
-	const logout = document.getElementById("pay");
+	const logout = document.getElementById("logout");
 	
 	//logout event
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
+		window.location = "index.html";
 	});
 	
 	//add realtime listener
