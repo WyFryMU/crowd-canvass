@@ -26,6 +26,14 @@
 
 	const btnCreateACanvassEvent = document.getElementById("createACanvassEvent");
 
+	const logout = document.getElementById("logout");
+	
+	//logout event
+	logout.addEventListener('click', e => {
+		firebase.auth().signOut();
+		window.location = "index.html";
+	});
+
 	//add realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
@@ -52,6 +60,8 @@
 			});
 		}else{
 			console.log("No one is logged in");
+			//alert("Please sign in.");
+			//window.location = "signUpsignIn.html";
 		}
 	});
 }());
