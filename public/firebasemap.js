@@ -3,6 +3,9 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, infoWindow;
+var current;
+firebase.initializeApp(firebaseConfig);
+var firebase = new Firebase("crowdvanvass.web.app");
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 43.0389, lng: -87.906 },
@@ -16,7 +19,7 @@ function initMap() {
   //locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-     var current = navigator.geolocation.getCurrentPosition(
+     current = navigator.geolocation.getCurrentPosition(
         (position) => {
           const pos = {
             lat: position.coords.latitude,
@@ -86,7 +89,26 @@ const contentString =
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
-  const directionsService = new google.maps.DirectionsService();
+  const geocoder = new google.maps.Geocoder();
+  document.getElementById("submit").addEventListener("click", () => {
+    geocodeAddress(geocoder, map);
+  });
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  const address = document.getElementById("address").value;
+  geocoder.geocode({ address: address }, (results, status) => {
+    if (status === "OK") {
+      resultsMap.setCenter(results[0].geometry.location);
+      new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location,
+      });
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+  /*const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsRenderer);
@@ -109,5 +131,16 @@ const contentString =
           window.alert("Directions request failed due to " + status);
         }
       }
-    );}
+    );}*/
+    var dbRef= firebase.database().ref('serviceEvents');
+    dbRef.on('value', function(snapshot) {
+    snapshot.forEach(function(child) {
+    var childs=child.val();
+    var marker = new google.maps.Marker({
+          position: {lat: childs.route1Addresses, lng: childs.route2Addresses},
+          map: map
+          });
+       });
+   });
   }
+  
