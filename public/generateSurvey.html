@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Account Main Page After Sign In</title> <!--Will need to fix this title name-->
+        <title>Create a Survey</title> <!--Will need to fix this title name-->
     <!-- <link rel="stylesheet" href="accountMainPageAfterSignIn.css"> won't be needing this -->
 	 <!--add new links-->
 	<!--Bring in new styling sheets-->
@@ -12,7 +12,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="jquery-3.5.1.min.js"></script>
+        <!--<script src="jquery-3.5.1.min.js"></script>-->
         <script>
             $(function() {
                 $("#addMore").click(function(e) {
@@ -105,7 +105,7 @@
                 <h4>Please Complete the form to generate the survey and QR code.</h4>
                 
                 <div class="box" style="width: 95%; height: 600px; overflow: auto;">
-                    <form action="form_sent.php" method="post" id="form">
+                    <p><!--<form action="form_sent.php" method="post" id="form">-->
                         <!-- Details -->
                         <div class="form-control">
                             <label for="name" id="label-name">
@@ -133,9 +133,10 @@
                           <button id="addMore">Add more fields</button>
                           <br>
                           <br>
-                          <input type="submit">
+                          <!--<input type="submit">-->
+                          <button type="submit" class="btn btn-default" id="submitBtn" style="background-color:  rgba(255, 164, 73, 1); cursor: pointer;">Submit</button>
 
-                    </form>
+                    <!--</form>--></p>
                 </div>
 
                 <!--Add in the form to submit needed support if wanted-->
@@ -147,5 +148,32 @@
         </div>
        </div>
 
+
+
+    <!--<script>
+	window.onload = function () {
+		
+		var submitBtn = document.getElementById("submitBtn");
+
+		submitBtn.onclick = function() {
+            var questions = document.querySelectorAll("[name='question[]']");
+            var answer1 = document.querySelectorAll("[name='answer1[]']");
+            var answer2 = document.querySelectorAll("[name='answer2[]']");
+
+            for(var i = 0; i < questions.length; i++) {
+                console.log(questions[i].value);
+                console.log(answer1[i].value);
+                console.log(answer2[i].value);
+            }
+            
+		}
+		
+	}	
+	</script>-->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="generateSurvey.js"></script>
+       
     </body>
 </html>
