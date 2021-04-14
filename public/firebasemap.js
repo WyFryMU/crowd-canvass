@@ -12,9 +12,8 @@ const firebaseConfig = {
   messagingSenderId: "805578793962",
   appId: "1:805578793962:web:a4784e3e4647f013d50893",
   };
-var firebase = new firebase("https://crowdcanvass-default-rtdb.firebaseio.com");
+
 firebase.initializeApp(firebaseConfig);
-var database = firebase.database();
 function initMap() {
   //starting map
   map = new google.maps.Map(document.getElementById("map"), {
@@ -107,7 +106,7 @@ const contentString =
     geocodeAddress(geocoder, map);
   });
   //adding events from database to map
-  var dbRef = database.ref('serviceEvents');
+  firebase.firestore().collection('serviceEvents');
   dbRef.on('child_added' , function(snapshot) {
     snapshot.forEach(function(child) {
     var childs=child.val();
