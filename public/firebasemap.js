@@ -3,10 +3,20 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, infoWindow;
-var current;
+const firebaseConfig = {
+  apiKey: "AIzaSyAgEK90feSQbkemjfXMCWwTh-Mid7lAq1Y",
+  authDomain: "crowdcanvass.firebaseapp.com",
+  databaseURL: "https://crowdcanvass-default-rtdb.firebaseio.com",
+  projectId: "crowdcanvass",
+  storageBucket: "crowdcanvass.appspot.com",
+  messagingSenderId: "805578793962",
+  appId: "1:805578793962:web:a4784e3e4647f013d50893",
+  };
+var firebase = new firebase("https://crowdcanvass-default-rtdb.firebaseio.com");
 firebase.initializeApp(firebaseConfig);
-var firebase = new Firebase("crowdvanvass.web.app");
+var database = firebase.database();
 function initMap() {
+  //starting map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 43.0389, lng: -87.906 },
     zoom: 13,
@@ -18,8 +28,9 @@ function initMap() {
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);*/
   //locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
+    //Geolocation 
     if (navigator.geolocation) {
-     current = navigator.geolocation.getCurrentPosition(
+     navigator.geolocation.getCurrentPosition(
         (position) => {
           const pos = {
             lat: position.coords.latitude,
@@ -56,6 +67,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   );
   infoWindow.open(map);
 }
+// Marker with text on click
 const chicago = { lat: 41.881, lng: -87.623 };
 const contentString =
     '<div id="content">' +
@@ -89,10 +101,29 @@ const contentString =
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
+  //Geocode 
   const geocoder = new google.maps.Geocoder();
   document.getElementById("submit").addEventListener("click", () => {
     geocodeAddress(geocoder, map);
   });
+  //adding events from database to map
+  var dbRef = database.ref('serviceEvents');
+  dbRef.on('child_added' , function(snapshot) {
+    snapshot.forEach(function(child) {
+    var childs=child.val();
+    geocoder.geocode({ address: childs.route1Addresses }, (results, status) => {
+      if (status === "OK") {
+        resultsMap.setCenter(results[0].geometry.location);
+        new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location,
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+       });
+   });
 }
 
 function geocodeAddress(geocoder, resultsMap) {
@@ -108,6 +139,7 @@ function geocodeAddress(geocoder, resultsMap) {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
+}
   /*const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
@@ -132,15 +164,4 @@ function geocodeAddress(geocoder, resultsMap) {
         }
       }
     );}*/
-    var dbRef= firebase.database().ref('serviceEvents');
-    dbRef.on('value', function(snapshot) {
-    snapshot.forEach(function(child) {
-    var childs=child.val();
-    var marker = new google.maps.Marker({
-          position: {lat: childs.route1Addresses, lng: childs.route2Addresses},
-          map: map
-          });
-       });
-   });
-  }
-  
+    
