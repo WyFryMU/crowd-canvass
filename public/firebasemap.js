@@ -3,6 +3,9 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, infoWindow;
+let markersArray = [];
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAgEK90feSQbkemjfXMCWwTh-Mid7lAq1Y",
   authDomain: "crowdcanvass.firebaseapp.com",
@@ -13,20 +16,15 @@ const firebaseConfig = {
   appId: "1:805578793962:web:a4784e3e4647f013d50893",
   };
 
-firebase.initializeApp(firebaseConfig);
-function initMap() {
+  firebase.initializeApp(firebaseConfig);
+
+  function initMap() {
   //starting map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 43.0389, lng: -87.906 },
     zoom: 13,
   });
   infoWindow = new google.maps.InfoWindow();
- /* const locationButton = document.createElement("button");
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);*/
-  //locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
     //Geolocation 
     if (navigator.geolocation) {
      navigator.geolocation.getCurrentPosition(
@@ -36,8 +34,6 @@ function initMap() {
             lng: position.coords.longitude,
           };
           infoWindow.setPosition(pos);
-          //infoWindow.setContent("Location found.");
-          //infoWindow.open(map);
           map.setCenter(pos);
           const marker = new google.maps.Marker({
             position: pos,
@@ -102,65 +98,54 @@ const contentString =
   });
   //Geocode 
   const geocoder = new google.maps.Geocoder();
-  document.getElementById("submit").addEventListener("click", () => {
-    geocodeAddress(geocoder, map);
+  //adding events to map
+  populateMap(geocoder, map);
+  markersArray[i].addListener("click", () => {
+    infowindow.open(map, marker);
   });
-  //adding events from database to map
-  firebase.firestore().collection('serviceEvents');
-  dbRef.on('child_added' , function(snapshot) {
-    snapshot.forEach(function(child) {
-    var childs=child.val();
-    geocoder.geocode({ address: childs.route1Addresses }, (results, status) => {
-      if (status === "OK") {
-        resultsMap.setCenter(results[0].geometry.location);
-        new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location,
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-       });
-   });
 }
 
-function geocodeAddress(geocoder, resultsMap) {
-  const address = document.getElementById("address").value;
-  geocoder.geocode({ address: address }, (results, status) => {
-    if (status === "OK") {
-      resultsMap.setCenter(results[0].geometry.location);
-      new google.maps.Marker({
+function populateMap(geocoder, resultsMap) {  
+//Service Events map population
+const db = firebase.firestore();
+db.collection("serviceEvents").get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+      console.log(doc.get("route1Addresses"));
+      var address = doc.get("route1Addresses");
+      geocoder.geocode({ address: address }, (results, status) => {
+      if (status === "OK") {
+      var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location,
       });
-    } else {
+      markersArray.push(marker);
+    }/* else {
       alert("Geocode was not successful for the following reason: " + status);
-    }
+    }*/
   });
-}
-  /*const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  directionsRenderer.setMap(map);
-  calculateAndDisplayRoute(directionsService, directionsRenderer);
-  
-    function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    directionsService.route(
-      {
-        origin: {
-          lat: current.lat, lng: current.lng,
-        },
-        destination: {
-          lat: chicago.lat, lng: chicago.lng
-        },
-        travelMode: google.maps.TravelMode.DRIVING,
-      },
-      (response, status) => {
-        if (status === "OK") {
-          directionsRenderer.setDirections(response);
-        } else {
-          window.alert("Directions request failed due to " + status);
-        }
-      }
-    );}*/
+  });
+});
+//Canvass Events map population
+db.collection("canvassEvents").get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+      console.log(doc.get("route1Addresses"));
+      var address = doc.get("route1Addresses");
+      geocoder.geocode({ address: address }, (results, status) => {
+      if (status === "OK") {
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location,
+      });
+      markersArray.push(marker);
+    }/* else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }*/
+  });
+  });
+});
+  }
+
+
+
     
+  
