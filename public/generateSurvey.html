@@ -21,6 +21,7 @@
                     $("#fieldList").append("<li><input type='text' name='question[]' placeholder='Question' /></li>");
                     $("#fieldList").append("<li><input type='text' name='answer1[]' placeholder='Answer 1' /></li>");
                     $("#fieldList").append("<li><input type='text' name='answer2[]' placeholder='Answer 2' /></li>");
+                    $("#fieldList").append("<li><input type='text' name='answer3[]' placeholder='Ansnwer 3' /></li>");
                 });
             });
         </script>
@@ -71,7 +72,12 @@
           font-size: 16px;
           margin: 4px 2px;
           cursor: pointer;
-        }
+            }
+        .qr-code {
+            max-width: 200px;
+             margin: 10px;
+            }
+
         </style>
     </head>
     <body style="background-color: lightgray;">
@@ -117,20 +123,22 @@
                                 id="name"
                                 placeholder="Enter Survey name" />
                         </div>
-
+                        <h4>Please provide the Questions and their answers for the survey.</h4>
                         <ul id="fieldList" style="list-style: none;">
                             <li>
-                            <p>Question and Answers</p>
                               <input name="question[]" type="text" placeholder="Question" />
                             </li>
                             <li>
                               <input name="answer1[]" type="text" placeholder="Answer 1" />
                             </li>
                             <li>
-                              <input name="answer2[]" type="text" placeholder="Answer 2">
+                              <input name="answer2[]" type="text" placeholder="Answer 2"/>
+                            </li>
+                            <li>
+                                <input name="answer3[]" type="text" placeholder="Answer 3" />
                             </li>
                           </ul>
-                          <button id="addMore">Add more fields</button>
+                          <button id="addMore">Add more Questions</button>
                           <br>
                           <br>
                           <!--<input type="submit">-->

@@ -18,6 +18,9 @@
           .navbar {
               margin-bottom: 0;
           }
+          .navbar .navbar-right{
+            margin: 0;
+          }
           /* Modify the background color */
           .navbar-custom {
               background-color: orange;
@@ -32,35 +35,115 @@
               background-color: white;
           }
           .sidenav{
-              background-color: darkgray;
+              /*background-color: darkgray;*/
               height: 100%;
           }
           .row.content{
-              height: 1485px;
-              padding-top: 50px;
+              height: auto;
+              padding-top: 0px;
           }
           /*try to mess with the row height when dealing with other media sizes and add the @media*/
           footer{
-              background-color: ivory;
+              background-color: darkgray;
               padding: 15px;
               color:red;
           }
           /*tell cursor to be pointer when hovering the other items*/
+          body{
+            background-image: linear-gradient(to left, white, white);
+            width: 100%;
+            height: auto;
+          }
+          .box-area{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .box-area li{
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 115, 0, 0.3);
+            animation: animate 20s linear infinite;
+            bottom: 0;
+            margin-bottom: 0;
+          }
+
+          .box-area li:nth-child(1){
+            left: 86%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+          }
+
+          .box-area li:nth-child(2){
+            left: 12%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 1.5s;
+            animation-duration: 10s;
+          }
+
+          .box-area li:nth-child(3){
+            left: 42%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 5.5s;
+          }
+
+          .box-area li:nth-child(3){
+            left: 72%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+          }
+
+          @keyframes animate{
+            0%{
+              transform: translateY(0) rotate(0deg);
+              opacity: 1;
+            }
+            100%{
+              transform: translateY(-720px) rotate(360deg);
+              opacity: 0;
+            }
+          }
+
+          .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+            
+          } /*Deal with padding later*/
+
+          .affix + .animated-area {
+            padding-top: 50px;
+          }
+
+          .affix + .box-area{
+            padding-top: 0px;
+          }
+          
 
         </style>
 
     </head>
 
-    <body style="background-color: lightgray;">
+    <body>
 		
 
 <!--background-color: rgba(255,164,73,1);  this is the orange-->
 
     <!--Navbar creation-->
-    <nav class="navbar navbar-custom navbar-fixed-top">
+    <!--<nav class="navbar navbar-custom navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+          <a class="navbar-brand" href="#">Crowd Canvass</a> <!-Decide later if we want to keep, if kept use this to re-route to home->
 
           <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
         </div>
@@ -70,49 +153,110 @@
           <li><a href="#" style="color: black;" id="analysis">Analysis  </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" style="color: black;" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> <!--Need to update ID once new webpage is made-->
+          <li><a href="#" style="color: black;" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> <!-Need to update ID once new webpage is made->
           <li><a href="#" style="color: black;" id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
     </nav>
-
-    <!-- Make the body elements -->
-    <div class="container-fluid text-center">
-      <div class="row content">
-          <div class="col-sm-2 sidenav">
+  -->
+    <!--Lets see if we can add the background image similar to the original website-->
+    <div style="width: 100%; height: 600px; background-image: url(https://img1.wsimg.com/isteam/ip/ee5fb05f-5686-4acb-b560-216220ca58ef/3c67c758-8cc7-4031-b90f-35262b158333.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1900,h:720,cg:true,m/cr=w:1900,h:720,a:cc);">
+      <!--<img src="assets/people2.jpeg" id="movable_image" style="width: 100%; height: 100%;">-->
+      <div class="container-fluid">
+        <div class="row content">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10 text-center">
+            <h1 style="color: white; margin: auto;">Welcome to Crowd Canvass</h1>
           </div>
-          <div class="col-sm-8 text-center">
-              <h1>Welcome to Crowd Canvass</h1>
-              <h3>Where Community meets Service</h3>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+    </div>
+    <!--Pit in the affixed Navbar-->
+    <nav class="navbar navbar-custom" data-spy="affix" data-offset-top="600">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+        <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 0px;"> </a>
+      </div>
+      <ul class="nav navbar-nav">
+       <!-- <li class="active"><a href="#">Crowd Canvass</a></li>
+        <li><a><img src="assets/capture.png" class="img-rounded" style="height: 45px; width: auto; padding: 0;"> </a></li> -->
+        <li><a href="#first_home">Home</a></li>
+        <li><a href="#main_contact">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="signUpsignIn.html" id="login">Login</a></li>
+        <li><a href="createAnAccount.html" id="signup">Sign Up</a></li>
+      </ul>
+    </nav>
+    <!-- Make the body elements -->
+    <div class="animated-area">
+      <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    <div class="container-fluid text-center">
+      <!--Add the background image here in a div class box-->
+      <div class="row content">
+          <div class="col-sm-1 sidenav">
+          </div>
+          <div class="col-sm-10 text-left" id="first_home">
+              <h3>Create Events</h3>
               <hr>
-              <div class="row">
+              <div class="row text-center">
                   <div class="col-sm-6">
-                      <button style="background-color: orange; border-radius: 4px; margin: 15% 0; margin-top:30%; float: right; font-size: x-large;" id="canvass"> <span class="glyphicon glyphicon-list-alt"></span> Create a Canvass Event </button>
+                      <img src="assets/canvassing.jpg" class="img-circle" style="height: auto; width: 75%; margin: 15% 0;" id="canvass">
                       <br>
-                      <img src="assets/community_service.jpg" class="img-circle" style="height: auto; width: 90%; margin: 15% 0;" id="commserv"> <!--Might want to add an id-->
+                      <button style="background-color: orange; border-radius: 4px; margin: 7% 0; font-size: x-large;" id="canvass"> <span class="glyphicon glyphicon-list-alt"></span> Create a Canvass Event </button>
                   </div>
                   <div class="col-sm-6">
-                      <img src="assets/canvassing.jpg" class="img-circle" style="height: auto; width: 90%; margin: 15% 0;" id="canvass">
+                      <img src="assets/community_service.jpg" class="img-circle" style="height: auto; width: 75%; margin: 15% 0;" id="commserv"> <!--Might want to add an id-->
                       <!--Position may need to become static-->
                       <br>
-                      <button style="border-radius: 4px; background-color: orange; margin: 15% 0; float: left; font-size: x-large;" id="commserv"> Create a Community Service Event <span class="glyphicon glyphicon-globe"></span> </button>
+                      <button style="border-radius: 4px; background-color: orange; margin: 7% 0; font-size: x-large;" id="commserv"> Create a Community Service Event <span class="glyphicon glyphicon-globe"></span> </button>
                   </div>
               </div>
-              <hr>
-              <h2>View Crowd Canvass Events within your area.</h2>
-              <!--Insert image of the map-->
-              <img src="assets/image5.png" id="map" style="width: 90%; height: auto; margin-bottom: 2%;">
+              <button class="text-center">View Events within your area</a>
           </div>
-          <div class="col-sm-2 sidenav">
-          </div>
+          <div class="col-sm-1 sidenav"></div>
       </div>
+      <div id="main_contact" class="text-left">
+        <h4>Contact Us At:</h4>
+        <hr>
+        <br>
+        <p>THE INFO!!</p>
   </div>
+  
+</div>
 
-
-      <footer class="container-fluid text-left">
-        <h6>Contact Us At:</h6>
-      </footer>
-
+<footer class="container-fluid text-center" style="position: sticky;">
+  <ul style="list-style: none;">
+    <div class="row">
+      <div class="col-sm-2">
+        <li><a style="color: black;">Home Page</a></li>
+        <li><a style="color: black;">Map Page</a></li>
+      </div>
+      <div class="col-sm-2">
+        <li><a>Finace and the Subpage to Pay and others linked</a></li>
+      </div>
+      <div class="col-sm-2">
+        <li><a>Analysis Pages</a></li>
+      </div>
+      <div class="col-sm-2">
+        <li><a>Create An Event Pages</a></li>
+      </div>
+      <div class="col-sm-2">
+        <li><a>About Us page</a></li>
+      </div>
+      <div class="col-sm-2">
+        <li><a>Manage Account page and logout</a></li>
+      </div>
+    </div>
+    
+  </ul>
+</footer>
       <!--script used for links-->
       <script>
         window.onload = function () {
@@ -148,6 +292,31 @@
           }
     
         }
+
+
+        var movable_image = document.getElementById("movable_image");
+        ;(function(){
+          var throttle = function(type, name, obj){
+            var obj = obj || window;
+            var running = false;
+            var func = function(){
+              if (running){ return; }
+              running = true;
+              requestAnimationFrame(function(){
+                obj.dispatchEvent(new CustomEvent(name));
+                running = false;
+              });
+            };
+          obj.addEventListener(type, func);
+          };
+
+          throttle("scroll", "optimizedScroll");
+        })();
+
+        window.addEventListener("optimizedScroll", function(){
+          movable_image.style.transform = "translaate3d( 0px,"+ window.pageYOffset + "px, 0px)";
+        })
+
         </script>
 
     </body>
