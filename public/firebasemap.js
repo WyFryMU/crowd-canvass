@@ -4,6 +4,7 @@
 // locate you.
 let map, infoWindow;
 var markersArray = [];
+var eventInfo = [];
 const contentString =
 '<div id="content">' +
 '<div id="siteNotice">' +
@@ -111,6 +112,29 @@ function initMap() {
           });
           
         }
+        console.log(eventInfo);
+        //adds address to show on screen
+        function makeUL(eventInfo) {
+          // Create the list element:
+          var list = document.createElement('ul');
+
+          for(var i = 0; i < Object.keys(eventInfo).length; i++) {
+              // Create the list item:
+              var item = document.createElement('li');
+
+              // Set its contents:
+              item.appendChild(document.createTextNode(eventInfo[i].route1Addresses));
+
+              // Add it to the list:
+              list.appendChild(item);
+          }
+
+          // Finally, return the constructed list:
+          return list;
+        }
+
+        // Add the contents of json to #foo:
+        document.getElementById('eventList').appendChild(makeUL(eventInfo));
       }, 3000); //wait 3 seconds before running this code so the array can populate before we add listeners
 }
 
@@ -122,6 +146,7 @@ function populateMap(geocoder, resultsMap) {
     querySnapshot.forEach(function(doc) {
         //console.log(doc.get("route1Addresses"));
         var address = doc.get("route1Addresses");
+        eventInfo.push(doc.data());
         geocoder.geocode({ address: address }, (results, status) => {
         if (status === "OK") {
           //console.log(results[0].geometry.location);
@@ -149,6 +174,7 @@ function populateMap(geocoder, resultsMap) {
     querySnapshot.forEach(function(doc) {
         //console.log(doc.get("route1Addresses"));
         var address = doc.get("route1Addresses");
+        eventInfo.push(doc.data());
         geocoder.geocode({ address: address }, (results, status) => {
           if (status === "OK") {
             lat = results[0].geometry.location.lat();
