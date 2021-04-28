@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Registration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <!-- <link rel="stylesheet" href="accountManage.css"> won't need this anymore -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	    <!-- jQuery library -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	    <!-- Latest compiled JavaScript -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	    <style>
+            html{
+                width: 100%;
+                background-color: darkgray;
+            }
+            .navbar {
+                margin-bottom: 0;
+            }
+            /* Modify the background color */
+            .navbar-custom {
+                background-color: orange;
+            }
+            /* Modify brand and text color */
+            .navbar-custom .navbar-brand,
+            .navbar-custom .navbar-text {
+                color: black;
+            }
+            /*        .navbar-custom .navbar-nav > li > a:focus */
+            .navbar-custom .navbar-nav > li > a:hover {
+                background-color: white;
+            }
+            .sidenav{
+                background-color: darkgray;
+                height: 100%;
+            }
+            .row.content{
+                height: 760px;
+                padding-top: 50px;
+            }
+            /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
+            footer{
+                background-color: ivory;
+                padding: 15px;
+                color:red;
+            }
+
+            form{
+            margin: 0 auto;
+            width:fit-content;
+            margin-top: 5%;
+            border: 5px solid rgba(255, 164, 73, 1);
+            padding: 50px;
+            align-items: center;
+            }
+            .button {
+            background-color: rgba(255, 164, 73, 1);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          .button:hover{
+            color: rgba(112, 112, 112, 1); 
+          }
+
+	    </style>
+
+    </head>
+
+    <body style="background-color: lightgray;">
+        <!--Generate navbar-->
+        <nav class="navbar navbar-custom navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+    
+                <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="accountMainPageAfterSignIn.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
+                <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
+                <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
+				<li><a href="registrationForm.html" style="color: black;" id="registration">Registration  </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="accountManage.html" style="color: black;" id="account"><span class="glyphicon glyphicon-user"></span> Account</a></li> <!--Need to update ID once new webpage is made-->
+                <li><a href="#" style="color: black;" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <!--Generate the body-->
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+
+                </div>
+                <div class="col-sm-8">
+                    <!--Insert the form, update new form later, or new format to the page-->
+                    <h3>Event Registration Form</h3>
+                    <form>
+                        <label for = "firstName">First Name</label>
+                        <input type="text" id = "firstName">
+                        <label for = "lastName">Last Name</label>
+                        <input type="text" id = "lastName"><br><br>
+                        <label for = "emailAddress">Email Address</label>
+                        <input type="text" id = "emailAddress"><br><br>
+						
+						 <label> State </label>
+                               <select class="button" id="type">
+									<option value="State ">Select</option>
+                                    <option value="Alabama ">AL</option>
+                                    <option value="Alaska ">AK</option>
+									<option value="Arizona ">AZ</option>
+									<option value="Arkansas ">AR</option>
+									<option value="California ">CA</option>
+									<option value="Colorado ">CO</option>
+									<option value="Connecticut ">CT</option>
+									<option value="Delaware ">DE</option>
+									<option value="Florida ">FL</option>
+									<option value="Georgia ">GA</option>
+									<option value="Hawaii ">HI</option>
+									<option value="Idaho ">ID</option>
+									<option value="Illinois ">IL</option>
+									<option value="Indiana ">IN</option>
+									<option value="Iowa ">IA</option>
+									<option value="Kansas ">KS</option>
+									<option value="Kentucky ">KY</option>
+									<option value="Louisiana ">LA</option>
+									<option value="Maine ">ME</option>
+									<option value="Maryland ">MD</option>
+									<option value="Massachusetts ">MA</option>
+									<option value="Michigan ">MI</option>
+									<option value="Minnesota ">MN</option>
+									<option value="Mississippi ">MS</option>
+									<option value="Missouri ">MO</option>
+									<option value="Montana ">MT</option>
+									<option value="Nebraska ">NE</option>
+									<option value="Nevada ">NV</option>
+									<option value="New Hampshire ">NH</option>
+									<option value="New Jersey ">NJ</option>
+									<option value="New Mexico ">NM</option>
+									<option value="New York ">NY</option>
+									<option value="North Carolina ">NC</option>
+									<option value="North Dakota ">ND</option>
+									<option value="Ohio ">OH</option>
+									<option value="Oklahoma ">OK</option>
+									<option value="Oregon ">OR</option>
+									<option value="Pennsylvania ">PA</option>
+									<option value="Rhode Island ">RI</option>
+									<option value="South Carolina ">SC</option>
+									<option value="South Dakota ">SD</option>
+									<option value="Tennessee ">TN</option>
+									<option value="Texas ">TX</option>
+									<option value="Utah ">UT</option>
+									<option value="Vermont ">VT</option>
+									<option value="Virginia ">VA</option>
+									<option value="Washington ">WA</option>
+									<option value="West Virginia ">WV</option>
+									<option value="Wisconsin ">WI</option>
+									<option value="Wyoming ">WY</option>
+                               </select>
+                        
+                        
+						
+                        <!--<button class = "button" id = "changePassword" value = "changePassword">Change Password</button><br><br>-->
+                        <label for = "addressLine1">Address Line 1</label>
+                        <input type="text" id = "addressLine1"><br><br>
+						<label for = "addressLine2">Address Line 2</label>
+                        <input type="text" id = "addressLine2">
+						<label for = "city">City</label>
+                        <input type="text" id = "city"><br><br>
+						<label for = "zipcode">Zip Code</label>
+                        <input type="text" id = "zipcode"><br><br>
+						
+						</form> 
+                       
+                    
+                </div>
+                <div class="col-sm-2 sidenav">
+
+                </div>
+            </div>
+        </div>                                
+         
+                                         
+        <!--Insert Footer if desired-->   
+        
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+		<script src="accountManage.js"></script>
+    </body>
+    </html>
