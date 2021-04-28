@@ -82,7 +82,7 @@
             height: 25px;
             background: rgba(255, 115, 0, 0.3);
             animation: animate 20s linear infinite;
-            bottom: 0px; /*This would have to be neg I believe so it can start lower*/
+            bottom: -100px; /*This would have to be neg I believe so it can start lower*/
           }
           .box-area li:nth-child(1){
             left: 86%;
@@ -116,7 +116,7 @@
               opacity: 1;
             }
             100%{
-              transform: translateY(-700px) rotate(360deg); /*Come back and see how the -px works again*/
+              transform: translateY(-1100px) rotate(360deg); /*Come back and see how the -px works again*/
               opacity: 0;
             }
           }
@@ -249,10 +249,43 @@
   </div>
   <div id="main_analysis" class="container-fluid text-center row">
     <div class="col-sm-1"></div>
-    <div class="col-sm-10">
+    <div class="col-sm-10 well well-sm">
       <h3 class="text-left">Analysis</h3>
       <hr>
-      <h1>Coming Soon!!</h1>
+      <div class="box" style="width: 100%; height: fit-content; overflow: auto;">
+        <p>
+            Step 1: Go to <a href="https://forms.google.com/" target="_blank">https://forms.google.com/</a>
+            <br>
+            Step 2: If not already logged in, log into your Google account.
+            <br>
+            Step 3: Click on the Blank template under the "Start a new form" section.
+            <br>
+            Step 4: Add a title to your form.
+            <br>
+            Step 5: Add questions to your form. Be aware you can change what type of question it is such as: Multiple choice, Checkboxes, Dropdown, etc.
+            <br>
+            Step 6: After you are all done adding all the questions you want click on the Send button in the top right.
+            <br>
+            Step 7: Click on the link icon and copy the link to the survey form and put that link into the Google Form link field.
+        </p>
+        <h4>Google Form Analysis Tutorial</h4>
+        <p>
+            Step 1: Go to <a href="https://forms.google.com/" target="_blank">https://forms.google.com/</a>
+            <br>
+            Step 2: If not already logged in, log into your Google account.
+            <br>
+            Step 3: Click on the survey form that you want to analyze in the "Recent forms" section.
+            <br>
+            Step 4: Click on "Responses".
+            <br>
+            Step 5: Use the "Summary" tab to see various auto-generated graphs and statistics generated from ALL of the survey responses.
+            <br>
+            Step 6: Use the "Question" tab to see each question and its responses.
+            <br>
+            Step 7: Use the "Individual" tab to see each individual survey filled out.
+
+        </p>
+    </div>
     </div>
     <div class="col-sm-1"></div>
     <!--This should be the steps to how to get the analysis from Google Forms, and at the top there should be a display how many different events this person created and participated in-->
