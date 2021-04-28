@@ -37,12 +37,12 @@
                 height: 100%;
             }
             .row.content{
-                height: 760px;
+                height: fit-content;
                 padding-top: 50px;
             }
             /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
             footer{
-                background-color: ivory;
+                background-color: darkgray;
                 padding: 15px;
                 color:red;
             }
@@ -51,8 +51,8 @@
             margin: 0 auto;
             width:fit-content;
             margin-top: 5%;
-            border: 5px solid rgba(255, 164, 73, 1);
-            padding: 50px;
+            /*border: 5px solid rgba(255, 164, 73, 1);*/
+            padding: 10px 50px;
             align-items: center;
             }
             .button {
@@ -73,62 +73,109 @@
 
 	    </style>
 
+<script>
+    $(function() {
+        $("#changeAccount").click(function(e) {
+            e.preventDefault();
+            //I need to say to generate the button that will display the choices to generate to
+            
+        });
+    });
+</script>
+
     </head>
 
-    <body style="background-color: lightgray;">
+    <body style="background-color: white;">
         <!--Generate navbar-->
         <nav class="navbar navbar-custom navbar-fixed-top">
             <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
-    
-                <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="accountMainPageAfterSignIn.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
-                <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
-                <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="accountManage.html" style="color: black;" id="account"><span class="glyphicon glyphicon-user"></span> Account</a></li> <!--Need to update ID once new webpage is made-->
-                <li><a href="#" style="color: black;" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-            </ul>
-            </div>
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home--><a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
+              </div>
+              <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><a href="accountMainPageAfterSignIn.html/main_home" style="color: black;">Home</a></li> <!--Sending to index due to idea that account is done signing in-->
+                    <li><a href="accountMainPageAfterSignIn.html/main_finance" style="color:black;">Finance </a></li>
+                    <li><a href="accountMainPageAfterSignIn.html/main_analysis" style="color: black;">Analysis  </a></li>
+                    <li><a href="accountMainPageAfterSignIn.html/main_contact" style="color: black">Contact Us</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account</a>
+                      <ul class="dropdown-menu">
+                        <p>Hello [Username].</p>
+                        <p>Would you like to:</p>
+                        <li><a href="accountManage.html" id="account" class="button">Manage Account</a></li>
+                        <li><a href="#" class="button" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        </ul>
+                    </li> <!--Need to update ID once new webpage is made-->
+                  </ul>
+                </div>
+              </div>
+          </div>
         </nav>
 
         <!--Generate the body-->
         <div class="container-fluid text-center">
             <div class="row content">
-                <div class="col-sm-2 sidenav">
-
+                <div class="col-sm-2">
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-8 well well-sm" style="margin-top: 30px;">
                     <!--Insert the form, update new form later, or new format to the page-->
                     <h3>Account Management</h3>
-                    <form>
-                        <label for = "accountEmail">Account Email</label>
-                        <input type="text" id = "accountEmail"><br><br>
-                        <label for = "accountUsername">Account Username</label>
-                        <input type="text" id = "accountUsername"><br><br>
-                        <label for = "password">Password</label>
-                        <input type="text" id = "password"><br><br>
-                        <!--<button class = "button" id = "changePassword" value = "changePassword">Change Password</button><br><br>-->
-                        <button class = "button" id="changePassword">Change Password</button><br>
-                        <label> Account Type </label>
-                               <select class="button" id="type">
-                                    <option value="organizer">Organizer</option>
-                                    <option value="volunteer">Volunteer</option>
-                               </select>
-                        
-                        </form> 
-                    <form>
-                            <label for = "bankAccount">Bank Account</label>
-                            <input type="text" id = "bankAccount"><br><br>
-                            <!--<button class = "button" id = "paypal" value = "paypal">PayPal</button>-->
-                            <button onclick="location.href='https://www.paypal.com/us/home'" type="button">PayPal</button>
-                         </form>
+                    <p style="width: 90%;">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for = "accountUsername">Account Username:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id = "accountUsername"> <!--This is takiing input, this needs to switch to the information stored within the database-->
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for = "accountEmail">Account Email:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="accountEmail">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="password">Password:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="password">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="button" id="changePassword">Change Password</div>
+                        <br>
+                        <label class="col-sm-3">Account Type:</label>
+                        <div class="col-sm-9">
+                            <p>[type of account stored]</p>
+                        </div>
+                        <label id="changeAccount">Change Account to:</label>
+                        <select class="button" id="type">
+                            <option value="organizer">Organizer</option>
+                            <option value="volunteer">Volunteer</option>
+                        </select>
+                        <br><br>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="bankAccount">Bank Account</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="bankAccount">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <button onclick="location.href='https://www.paypal.com/us/home'" type="button">PayPal</button>
+                    </p>
                 </div>
-                <div class="col-sm-2 sidenav">
+                <div class="col-sm-2">
 
                 </div>
             </div>
@@ -136,6 +183,33 @@
          
                                          
         <!--Insert Footer if desired-->   
+
+        <footer class="container-fluid text-center">
+            <ul style="list-style: none;">
+              <div class="row">
+                <div class="col-sm-2">
+                  <li><a style="color: black;">Home Page</a></li>
+                  <li><a style="color: black;">Map Page</a></li>
+                </div>
+                <div class="col-sm-2">
+                  <li><a>Finace and the Subpage to Pay and others linked</a></li>
+                </div>
+                <div class="col-sm-2">
+                  <li><a>Analysis Pages</a></li>
+                </div>
+                <div class="col-sm-2">
+                  <li><a>Create An Event Pages</a></li>
+                </div>
+                <div class="col-sm-2">
+                  <li><a>About Us page</a></li>
+                </div>
+                <div class="col-sm-2">
+                  <li><a>Manage Account page and logout</a></li>
+                </div>
+              </div>
+              
+            </ul>
+          </footer>
         
         <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
