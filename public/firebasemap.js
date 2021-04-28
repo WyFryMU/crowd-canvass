@@ -103,7 +103,7 @@ function initMap() {
     //adding events to map
     populateMap(geocoder, map);
     //console.log(markersArray);
-    setTimeout(
+    setTimeout( //see comment right below
       function(){
         for(var i = 0; i < markersArray.length; i++){
           google.maps.event.addListener(markersArray[i], 'click', function(){
@@ -111,7 +111,7 @@ function initMap() {
           });
           
         }
-      }, 3000); //wait 3 seconds before running this code so the array can populate
+      }, 3000); //wait 3 seconds before running this code so the array can populate before we add listeners
 }
 
 function populateMap(geocoder, resultsMap) {  
