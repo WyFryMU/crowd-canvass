@@ -27,11 +27,12 @@
           /* Modify brand and text color */
           .navbar-custom .navbar-brand,
           .navbar-custom .navbar-text {
-              color: black;
+              color: white;
           }
           /*        .navbar-custom .navbar-nav > li > a:focus */
           .navbar-custom .navbar-nav > li > a:hover {
-              background-color: white;
+              background-color: rgb(255, 102, 0);
+
           }
           .sidenav{
               background-color: darkgray;
@@ -140,10 +141,10 @@
       <div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="#main_home" style="color: black;">Home</a></li> <!--Sending to index due to idea that account is done signing in-->
-            <li><a href="#main_finance" style="color:black;">Finance </a></li>
-            <li><a href="#main_analysis" style="color: black;">Analysis  </a></li>
-            <li><a href="#main_contact" style="color: black">Contact Us</a></li>
+            <li><a href="#main_home" style="color: white;">Home</a></li> <!--Sending to index due to idea that account is done signing in-->
+            <li><a href="#main_finance" style="color:white;">Finance </a></li>
+            <li><a href="#main_analysis" style="color: white;">Analysis  </a></li>
+            <li><a href="#main_contact" style="color: white">Contact Us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account</a>
@@ -246,23 +247,32 @@
       <div class="col-sm-1"></div>
     </div>
   </div>
-  <div id="main_analysis" class="container-fluid text-center">
-    <h3 class="text-left">Analysis</h3>
-    <hr>
-    <h1>Coming Soon!!</h1>
+  <div id="main_analysis" class="container-fluid text-center row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <h3 class="text-left">Analysis</h3>
+      <hr>
+      <h1>Coming Soon!!</h1>
+    </div>
+    <div class="col-sm-1"></div>
     <!--This should be the steps to how to get the analysis from Google Forms, and at the top there should be a display how many different events this person created and participated in-->
   </div>
-  <div id="main_contact" class="container-fluid text-left">
-    <h4>Contact Us At:</h4>
-    <hr>
-    <br>
-    <p>THE INFO!!</p>
-    <!--This should be the contacting information with a Link to the About Us page-->
-  </div>
+
   <!--Generate footer that has the links and quick Contact us info-->
   
 
   </div> <!--End of animated area-->
+  <div id="main_contact" style="background-image: linear-gradient(to bottom,white, black); text-align: center;">
+    <h3 style="font-family: 'Lucida Console', monospace; font-weight:700; margin-left: 10%; color: black; text-align: left;" >CONTACT US:</h3>
+    <hr style="margin-left: 10%; margin-right: 10%;">
+    <br>
+    <p style="font-size: large; color: darkgray;">Crowd Canvass</p>
+    <p style="color: white; font-size: large;">PO BOX 28904, Milwaukee, WI 53228</p>
+    <p style="color: rgb(255, 81, 0); font-size: large;">(414)235-1025</p>
+    <br>
+    <br>
+  </div>
+
   <footer class="container-fluid text-center">
     <ul style="list-style: none;">
       <div class="row">
@@ -271,19 +281,19 @@
           <li><a style="color: black;">Map Page</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a>Finace and the Subpage to Pay and others linked</a></li>
+          <li><a style="color: black;">Finace</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a>Analysis Pages</a></li>
+          <li><a style="color: black;">Analysis Pages</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a>Create An Event Pages</a></li>
+          <li><a style="color: black;">Create An Event Pages</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a>About Us page</a></li>
+          <li><a style="color: black;">About Us page</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a>Manage Account page and logout</a></li>
+          <li><a style="color: black;">Manage Account page and logout</a></li>
         </div>
       </div>
       

@@ -17,7 +17,7 @@
         <style>
             html{
                 width: 100%;
-                background-color: darkgray;
+                background-color: none;
             }
             .navbar {
                 margin-bottom: 0;
@@ -29,53 +29,51 @@
             /* Modify brand and text color */
             .navbar-custom .navbar-brand,
             .navbar-custom .navbar-text {
-                color: black;
+                color: white;
             }
             /*        .navbar-custom .navbar-nav > li > a:focus */
             .navbar-custom .navbar-nav > li > a:hover {
-                background-color: white;
+                background-color: rgb(255, 102, 0);
+
             }
             .sidenav{
                 background-color: darkgray;
-                height: 100%;
+                height: auto;
             }
             .row.content{
-                height: 750px;
+                height: 100%;
                 padding-top: 50px;
+                margin-top: 20px;
             }
             /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
             footer{
-                background-color: ivory;
+                background-color: darkgray;
                 padding: 15px;
                 color:red;
             }
         </style>
     </head>
 
-    <body style="background-color: lightgray;">
+    <body>
         <!--Generate the Navbar-->
         <nav class="navbar navbar-custom navbar-fixed-top">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
-      
-                <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li><a href="index.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
-                <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
-                <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
-              </ul>
-            </div>
-          </nav>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+            <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 0px;"> </a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.html" style="color:white;">Home</a></li>
+            <li><a href="index.html" style="color: white;">Contact Us</a></li>
+          </ul>
+        </nav>
 
           <!--Generate the Form-->
           <div class="container-fluid text-center">
             <div class="row content">
-                <div class="col-sm-2 sidenav">
+                <div class="col-sm-2">
     
                 </div>
-                <div class="col-sm-8"> <!--form will go in here-->
+                <div class="col-sm-8 well well-sm"> <!--form will go in here-->
                     <h2>Sign into your Crowd Canvass Account</h2>
                     <!--<form class="form-horizontal" action="/action_page.php" style="width: 90%;">--><p style="width: 90%;">
                         <!--I think we need to find a way that people can either type their email or username and both should work-->
@@ -98,7 +96,7 @@
                     <a href = "createAnAccount.html" class = "btn btn-default" id = "signUp" style="background-color: rgba(255, 164, 73, 1);">Sign Up</a>
                     <!--</form>--></p>
                 </div>
-                <div class="col-sm-2 sidenav">
+                <div class="col-sm-2">
     
                 </div>
             </div>

@@ -27,11 +27,12 @@
           /* Modify brand and text color */
           .navbar-custom .navbar-brand,
           .navbar-custom .navbar-text {
-              color: black;
+              color: white;
           }
           /*        .navbar-custom .navbar-nav > li > a:focus */
           .navbar-custom .navbar-nav > li > a:hover {
-              background-color: white;
+              background-color: rgb(255, 102, 0);
+
           }
           .sidenav{
               height: 100%;
@@ -54,20 +55,17 @@
 
     <!--Navbar creation-->
 
+    
     <nav class="navbar navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
-  
-            <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="index.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
-            <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
-            <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
-          </ul>
-        </div>
-      </nav> 
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+        <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 0px;"> </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.html" style="color:white;">Home</a></li>
+        <li><a href="index.html" style="color: white;">Contact Us</a></li>
+      </ul>
+    </nav>
     
     <!--Create the form and page-->
     <div class="container-fluid text-center">
