@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Create a Survey</title> <!--Will need to fix this title name-->
+    <!-- <link rel="stylesheet" href="accountMainPageAfterSignIn.css"> won't be needing this -->
+	 <!--add new links-->
+	<!--Bring in new styling sheets-->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!--<script src="jquery-3.5.1.min.js"></script>-->
+        <script>
+            $(function() {
+                $("#addMore").click(function(e) {
+                    e.preventDefault();
+                    $("#fieldList").append("<li>&nbsp;</li>");
+                    $("#fieldList").append("<li><input type='text' name='question[]' placeholder='Question' /></li>");
+                    $("#fieldList").append("<li><input type='text' name='answer1[]' placeholder='Answer 1' /></li>");
+                    $("#fieldList").append("<li><input type='text' name='answer2[]' placeholder='Answer 2' /></li>");
+                });
+            });
+        </script>
+	<style>
+		html{
+              width: 100%;
+              background-color: darkgray;
+          }
+          .navbar {
+              margin-bottom: 0;
+          }
+          /* Modify the background color */
+          .navbar-custom {
+              background-color: orange;
+          }
+          /* Modify brand and text color */
+          .navbar-custom .navbar-brand,
+          .navbar-custom .navbar-text {
+              color: black;
+          }
+          /*        .navbar-custom .navbar-nav > li > a:focus */
+          .navbar-custom .navbar-nav > li > a:hover {
+              background-color: white;
+          }
+          .sidenav{
+              background-color: darkgray;
+              height: 100%;
+          }
+          .row.content{
+              height: 750px;
+              padding-top: 50px;
+          }
+          /*try to mess with the row hieght when dealing with other media sizes and add the @media*/
+          footer{
+              background-color: ivory;
+              padding: 15px;
+              color:red;
+          }
+
+		  .button {
+          background-color: rgba(255, 164, 73, 1);
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>
+    </head>
+    <body style="background-color: lightgray;">
+        <nav class="navbar navbar-custom navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Crowd Canvass</a> <!--Decide later if we want to keep, if kept use this to re-route to home-->
+      
+                <a><img src="assets/capture.png" class="img-rounded" style="height: 48px; width: auto; margin: 1px;"> </a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="accountMainPageAfterSignIn.html" style="color: black;" id="home">Home <span class="glyphicon glyphicon-home"></span> </a></li> <!--Sending to index due to idea that account is done signing in-->
+                <li><a href="financePage.html" style="color:black;" id="finances">Finance <span class="glyphicon glyphicon-piggy-bank"></span> </a></li>
+                <li><a href="analysisPage.html" style="color: black;" id="analysis">Analysis  </a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="accountManage.html" style="color: black;" id="account"><span class="glyphicon glyphicon-user"></span> Account</a></li> <!--Need to update ID once new webpage is made-->
+                <li><a href="#" style="color: black;" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <!--Generate the Contents-->
+      <div class="container-fluid text-center">
+		<div class="row content">
+			<div class="col-sm-2 sidenav">
+
+			</div>
+			<div class="col-sm-8">
+                <h2>How To Use Google Forms</h2>
+                <h4>Google Form Survey Tutorial</h4>
+                
+                <div class="box" style="width: 100%; height: 600px; overflow: auto;">
+                    <p>
+                        Step 1: Go to <a href="https://forms.google.com/" target="_blank">https://forms.google.com/</a>
+                        <br>
+                        Step 2: If not already logged in, log into your Google account.
+                        <br>
+                        Step 3: Click on the Blank template under the "Start a new form" section.
+                        <br>
+                        Step 4: Add a title to your form.
+                        <br>
+                        Step 5: Add questions to your form. Be aware you can change what type of question it is such as: Multiple choice, Checkboxes, Dropdown, etc.
+                        <br>
+                        Step 6: After you are all done adding all the questions you want click on the Send button in the top right.
+                        <br>
+                        Step 7: Click on the link icon and copy the link to the survey form and put that link into the Google Form link field.
+                    </p>
+                    <h4>Google Form Analysis Tutorial</h4>
+                    <p>
+                        Step 1: Go to <a href="https://forms.google.com/" target="_blank">https://forms.google.com/</a>
+                        <br>
+                        Step 2: If not already logged in, log into your Google account.
+                        <br>
+                        Step 3: Click on the survey form that you want to analyze in the "Recent forms" section.
+                        <br>
+                        Step 4: Click on "Responses".
+                        <br>
+                        Step 5: Use the "Summary" tab to see various auto-generated graphs and statistics generated from ALL of the survey responses.
+                        <br>
+                        Step 6: Use the "Question" tab to see each question and its responses.
+                        <br>
+                        Step 7: Use the "Individual" tab to see each individual survey filled out.
+
+                    </p>
+                </div>
+                
+
+                <!--Add in the form to submit needed support if wanted-->
+            </div>
+            
+            <div class="col-sm-2 sidenav">
+
+            </div>
+        </div>
+       </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+       
+    </body>
+</html>
