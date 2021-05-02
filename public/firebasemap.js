@@ -114,27 +114,53 @@ function initMap() {
         }
         console.log(eventInfo);
         //adds address to show on screen
-        function makeUL(eventInfo) {
-          // Create the list element:
-          var list = document.createElement('ul');
 
-          for(var i = 0; i < Object.keys(eventInfo).length; i++) {
-              // Create the list item:
-              var item = document.createElement('li');
+        var table = document.getElementById('eventList');
 
-              // Set its contents:
-              item.appendChild(document.createTextNode(eventInfo[i].route1Addresses));
+			  var rowCount = table.rows.length;
+		    var row = table.insertRow(rowCount);
 
-              // Add it to the list:
-              list.appendChild(item);
-          }
+        var cell1 = row.insertCell(0);
+        cell1.appendChild(document.createTextNode("Address"));
+        cell1.style.border = "1px solid black";
+        cell1.style.padding = "5px";
+        var cell1 = row.insertCell(1);
+        cell1.appendChild(document.createTextNode("Amount Paid"));
+        cell1.style.border = "1px solid black";
+        cell1.style.padding = "5px";
+        var cell1 = row.insertCell(2);
+        cell1.appendChild(document.createTextNode("Hourly Rate"));
+        cell1.style.border = "1px solid black";
+        cell1.style.padding = "5px";
+        var cell1 = row.insertCell(3);
+        cell1.appendChild(document.createTextNode("Flat Rate"));
+        cell1.style.border = "1px solid black";
+        cell1.style.padding = "5px";
 
-          // Finally, return the constructed list:
-          return list;
+        for(var i = 0; i < Object.keys(eventInfo).length; i++) {
+          var table = document.getElementById('eventList');
+
+          var rowCount = table.rows.length;
+          var row = table.insertRow(rowCount);
+  
+          var cell1 = row.insertCell(0);
+          cell1.appendChild(document.createTextNode(eventInfo[i].route1Addresses));
+          cell1.style.border = "1px solid black";
+          cell1.style.padding = "5px";
+          var cell1 = row.insertCell(1);
+          cell1.appendChild(document.createTextNode(eventInfo[i].amountPaid));
+          cell1.style.border = "1px solid black";
+          cell1.style.padding = "5px";
+          var cell1 = row.insertCell(2);
+          cell1.appendChild(document.createTextNode(eventInfo[i].radioHourly));
+          cell1.style.border = "1px solid black";
+          cell1.style.padding = "5px";
+          var cell1 = row.insertCell(3);
+          cell1.appendChild(document.createTextNode(eventInfo[i].radioService));
+          cell1.style.border = "1px solid black";
+          cell1.style.padding = "5px";
         }
 
-        // Add the contents of json to #foo:
-        document.getElementById('eventList').appendChild(makeUL(eventInfo));
       }, 3000); //wait 3 seconds before running this code so the array can populate before we add listeners
 }
 
