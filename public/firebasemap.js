@@ -5,6 +5,8 @@
 let map, infoWindow;
 var markersArray = [];
 var eventInfo = [];
+var eventIDs = [];
+var firebaseUser;
 const contentString =
 '<div id="content">' +
 '<div id="siteNotice">' +
@@ -104,6 +106,16 @@ function initMap() {
     //adding events to map
     populateMap(geocoder, map);
     //console.log(markersArray);
+    //add realtime listener
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if(firebaseUser){
+        console.log(firebaseUser);
+        console.log(firebaseUser.uid);
+        this.firebaseUser = firebaseUser;
+      }else{
+        console.log("not logged in");
+      }
+    });
     setTimeout( //see comment right below
       function(){
         for(var i = 0; i < markersArray.length; i++){
@@ -113,6 +125,7 @@ function initMap() {
           
         }
         console.log(eventInfo);
+        console.log(eventIDs);
         //adds address to show on screen
 
         var table = document.getElementById('eventList');
@@ -137,6 +150,7 @@ function initMap() {
         cell1.style.border = "1px solid black";
         cell1.style.padding = "5px";
 
+        var count = 0;
         for(var i = 0; i < Object.keys(eventInfo).length; i++) {
           var table = document.getElementById('eventList');
 
@@ -159,7 +173,39 @@ function initMap() {
           cell1.appendChild(document.createTextNode(eventInfo[i].radioService));
           cell1.style.border = "1px solid black";
           cell1.style.padding = "5px";
+          var cell1 = row.insertCell(4);
+          cell1.appendChild(document.createElement("button")).appendChild(document.createTextNode("Sign Up"));
+          cell1.id = count;
+          cell1.name = count.toString;
+          console.log(cell1);
+          count++;
+          cell1.style.border = "1px solid black";
+          cell1.style.padding = "5px";
+          //add listeners to sign up buttons
+          cell1.addEventListener('click', e => {
+            console.log("path");
+            console.log(e.path[1].id);
+            console.log("eventId");
+            console.log(eventIDs[e.path[1].id]);
+            firebase.firestore().collection("users").doc(firebaseUser.uid).update({
+              signedUpFor: firebase.firestore.FieldValue.arrayUnion(eventIDs[e.path[1].id])
+              //signedUpFor: eventIDs[e.path[1].id]
+            })
+            .then(() => {
+              console.log("Document successfully written!");
+              //window.location = "accountMainPageAfterSignIn.html";
+            })
+            .catch((error) => {
+              console.error("Error writing document: ", error);
+            });  
+          });
         }
+
+        
+
+
+
+
 
       }, 3000); //wait 3 seconds before running this code so the array can populate before we add listeners
 }
@@ -172,6 +218,7 @@ function populateMap(geocoder, resultsMap) {
     querySnapshot.forEach(function(doc) {
         //console.log(doc.get("route1Addresses"));
         var address = doc.get("route1Addresses");
+        eventIDs.push(doc.id);
         eventInfo.push(doc.data());
         geocoder.geocode({ address: address }, (results, status) => {
         if (status === "OK") {
@@ -200,6 +247,7 @@ function populateMap(geocoder, resultsMap) {
     querySnapshot.forEach(function(doc) {
         //console.log(doc.get("route1Addresses"));
         var address = doc.get("route1Addresses");
+        eventIDs.push(doc.id);
         eventInfo.push(doc.data());
         geocoder.geocode({ address: address }, (results, status) => {
           if (status === "OK") {
