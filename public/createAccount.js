@@ -50,10 +50,21 @@
 			})
 			.then(() => {
 				console.log("Document successfully written!");
-				window.location = "accountMainPageAfterSignIn.html";
+				//window.location = "accountMainPageAfterSignIn.html";
 			})
 			.catch((error) => {
 				console.error("Error writing document: ", error);
+			});
+
+			var user = firebase.auth().currentUser;
+
+			user.sendEmailVerification().then(function() {
+  			// Email sent.
+			  alert("Please verify your account by going to your email.");
+			  window.location = "accountMainPageAfterSignIn.html";
+			}).catch(function(error) {
+  			// An error happened.
+			  alert(error);
 			});
 			
 		}else{
