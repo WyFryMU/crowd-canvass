@@ -14,6 +14,7 @@
 	//get elements
 	const txtEmail = document.getElementById("email");
 	const txtPassword = document.getElementById("password");
+	const txtPasswordConfirm = document.getElementById("reEnterPassword");
 	const btnCreateAccount = document.getElementById("createAccount");
 	
 	const txtName = document.getElementById("name");
@@ -25,10 +26,15 @@
 		//get email and password
 		const email = txtEmail.value;
 		const pass = txtPassword.value;
+		const pass2 = txtPasswordConfirm.value;
 		const auth = firebase.auth();
-		//sign in
-		const promise = auth.createUserWithEmailAndPassword(email,pass);
-		promise.catch(e => console.log(e.message));
+		if(pass == pass2){
+			//create user
+			const promise = auth.createUserWithEmailAndPassword(email,pass);
+			promise.catch(e => console.log(e.message));
+		}else{
+			alert("Please make sure your passwords match.");
+		}
 	});
 	
 	//add realtime listener
