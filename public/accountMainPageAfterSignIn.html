@@ -51,7 +51,7 @@
 
 		  .button {
           background-color: rgba(255, 164, 73, 1);
-          border: none;
+          border: 4px;
           color: black;
           padding: 15px 32px;
           text-align: center;
@@ -60,6 +60,7 @@
           font-size: 16px;
           margin: 4px 2px;
           cursor: pointer;
+          border-radius: 4px;
         }
 /*This is for the animated background*/
         body{
@@ -146,13 +147,14 @@
             <li><a href="#main_analysis" style="color: white;">Analysis  </a></li>
             <li><a href="#main_contact" style="color: white">Contact Us</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right text-center">
             <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account</a>
               <ul class="dropdown-menu">
-                <p>Hello [Username].</p>
+                <p>Hello</p>
                 <p>Would you like to:</p>
                 <li><a href="accountManage.html" id="account" class="button">Manage Account</a></li>
-                <li><a href="#" class="button" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="#" class="button" id="logout" style="width: fit-content;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="viewEvents.html" id="events" class="button">View Events Signed Up For</a></li>
                 </ul>
             </li> <!--Need to update ID once new webpage is made-->
           </ul>
@@ -189,15 +191,27 @@
             <!-- Wrapper for slides, need images a specific size and larger -->
             <div class="carousel-inner" style="height: 450px; width: auto;">
               <div class="item active">
-                <img src="assets/canvassing.jpg" alt="Los Angeles" style="width:auto; height: fit-content;">
+                <img src="assets/canvassing.jpg" style="width:auto; height: fit-content;">
+                <div class="carousel-caption" style="top:300px;">
+                  <h3>Canvass</h3>
+                  <p>Events that will help your community.</p>
+                </div>
               </div>
         
               <div class="item">
-                <img src="assets/community_service.jpg" alt="Chicago" style="width:auto; height: fit-content;">
+                <img src="assets/community_service.jpg" style="width:auto; height: fit-content;">
+                <div class="carousel-caption" style="top: 300px;">
+                  <h3>Community Service</h3>
+                  <p>Assist the communities needs through service.</p>
+                </div>
               </div>
             
               <div class="item">
-                <img src="assets/sidewalk2.jpg" alt="New york" style="width:auto; height: fit-content;">
+                <img src="assets/sidewalk2.jpg" style="width:auto; height: fit-content;">
+                <div class="carousel-caption" style="top: 300px;">
+                  <h3>Survey Analysis</h3>
+                  <p>Create and Analyze data from surveys via Google Forms.</p>
+                </div>
               </div>
             </div>
         
@@ -221,6 +235,8 @@
             <a class="button" href="createACanvassEvent.html" onclick="return organizerOnly();">Create a Canvass Event</a>
           </div>
         </div>
+        <br>
+        <br>
         <!--Add the button to view events within your area-->
         <a class="button" href="eventsWithinYourAreaWithFilter.html">View Events within your area</a>
       </div>
@@ -253,6 +269,7 @@
       <h3 class="text-left">Analysis</h3>
       <hr>
       <div class="box" style="width: 100%; height: fit-content; overflow: auto;">
+        <h4>Google Form Creation Tutorial</h4>
         <p>
             Step 1: Go to <a href="https://forms.google.com/" target="_blank">https://forms.google.com/</a>
             <br>
