@@ -61,13 +61,15 @@
 			user.sendEmailVerification().then(function() {
   			// Email sent.
 			  alert("Please verify your account by going to your email.");
-			  window.location = "accountMainPageAfterSignIn.html";
+			  firebase.auth().signOut();
+			  window.location = "index.html";
 			}).catch(function(error) {
   			// An error happened.
 			  alert(error);
 			});
 			
 		}else{
+			//window.location = "index.html";
 			console.log("not logged in");
 		}
 	});
