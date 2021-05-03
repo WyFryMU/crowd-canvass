@@ -94,6 +94,10 @@ setTimeout(function(){
     cell1.appendChild(document.createTextNode("Address"));
     cell1.style.border = "1px solid black";
     cell1.style.padding = "5px";
+    var cell1 = row.insertCell(4);
+    cell1.appendChild(document.createTextNode("Survey Form Link"));
+    cell1.style.border = "1px solid black";
+    cell1.style.padding = "5px";
 
     var count = 0;
     for(var i = 0; i < Object.keys(eventIDs).length; i++) {
@@ -121,6 +125,13 @@ setTimeout(function(){
                 cell1.style.border = "1px solid black";
                 cell1.style.padding = "5px";
                 var cell1 = row.insertCell(4);
+                var link = document.createElement("a");
+                link.setAttribute("href", eventInfo[i].formLink);
+                link.setAttribute("target", "_blank");
+                cell1.appendChild(link).appendChild(document.createTextNode(eventInfo[i].formLink));
+                cell1.style.border = "1px solid black";
+                cell1.style.padding = "5px";
+                var cell1 = row.insertCell(5);
                 cell1.appendChild(document.createElement("button")).appendChild(document.createTextNode("Un-Register"));
                 cell1.id = count;
                 cell1.name = count.toString;
