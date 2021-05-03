@@ -16,6 +16,9 @@
               width: 100%;
               background-color: darkgray;
           }
+		  body{
+			font-family: "Lucida Console", monospace;
+		  }
           .navbar {
               margin-bottom: 0;
           }
@@ -94,12 +97,13 @@
                     <li><a href="accountMainPageAfterSignIn.html#main_contact" style="color: white">Contact Us</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account</a>
+                    <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <p>Hello [Username].</p>
                         <p>Would you like to:</p>
                         <li><a href="accountManage.html" id="account" class="button">Manage Account</a></li>
                         <li><a href="#" class="button" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="viewEvents.html" id="events" class="button">View Events Signed Up For</a></li>
                         </ul>
                     </li> <!--Need to update ID once new webpage is made-->
                   </ul>
@@ -116,23 +120,31 @@
 
 				</div>
 				<div class="col-sm-8 well well-sm">
-					<p>
-            <a href = "createACanvassEvent.html" class = "button">Create a Canvass event</a>
-            <a href = "createAServiceEvent.html" class = "button">Create a Community service event</a><br><br>
-            <label for = "eventTitle">Event Name</label>
-            <input type="text" id = "eventTitle"><br><br>
-            <label for = "des">Event Description</label>
-            <input type="text" id = "des"><br><br>
-            <label for = "amountPaid">Amount Paid</label>
-            <input type="text" id = "amountPaid"><br><br>
-            <label for = "route1Addresses">Address</label>
-            <input type="text" id = "route1Addresses"><br><br>
-            <a href="accountMainPageAfterSignIn.html#main_analysis" target = "_blank">Google forms tutorial page</a><br><br>
-            <label for = "formLink">Survey Link</label>
-            <input type="text" id = "formLink"><br><br>
-            <button type = "submit" id = "createACanvassEvent" class = "button">Create Event</button>
-					<!--</form>-->	
-					</p>
+					<a href = "createACanvassEvent.html" class = "button">Create a Canvass event</a>
+				<a href = "createAServiceEvent.html" class = "button">Create a Community service event</a><br><br>
+				<div class="col-sm-4 text-center">
+					<label for = "eventTitle">Event Name</label> <br><br>
+					<label for = "des">Event Description</label> <br><br>
+					<label for = "amountPaid">Amount Paid</label> <br><br>
+					<label for = "route1Addresses">Address</label> <br><br>
+				</div>
+				<div class="col-sm-8 text-center">
+					<input type="text" id = "eventTitle"><br><br>
+					<input type="text" id = "des"><br><br>
+					<input type="text" id = "amountPaid"><br><br>
+					<input type="text" id = "route1Addresses"><br><br>
+				</div>
+				<p class="text-center">
+          			<a href="accountMainPageAfterSignIn.html#main_analysis" target = "_blank">Google forms tutorial page</a><br><br>
+					<div class="col-sm-4 text-center">
+						<label for = "formLink">Survey Link</label> <br><br>
+					</div>
+					<div class="col-sm-8 text-center">
+						<input type="text" id = "formLink"><br><br>
+					</div>
+					<button type = "submit" id = "createACanvassEvent" class = "button">Create Event</button>
+				<!--</form>-->	
+				</p>
 				</div>
 				<div class="col-sm-2">
 
