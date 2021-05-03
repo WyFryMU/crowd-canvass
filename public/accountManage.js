@@ -1,4 +1,5 @@
 var logoutFlag = false;
+var fUserID;
 (function() {
 	console.log("loaded accountManage script");
     const firebaseConfig = {
@@ -16,8 +17,26 @@ var logoutFlag = false;
 	const newPassword = document.getElementById("newPassword");
 	const confirmNewPassword = document.getElementById("confirmNewPassword");
 	const changePassword = document.getElementById("changePassword");
+	const accountTypeChange = document.getElementById("changeType");
 	console.log(newPassword);
 	console.log(newPassword.value);
+
+	accountTypeChange.addEventListener("change", e => {
+		console.log("Changed");
+		firebase.firestore().collection("users").doc(fUserID).update({
+			accountType: accountTypeChange.value
+			//signedUpFor: eventIDs[e.path[1].id]
+		  })
+		  .then(() => {
+			alert("You have sucessfully changed your account type.");
+			console.log("Document successfully written!");
+			//window.location = "accountMainPageAfterSignIn.html";
+		  })
+		  .catch((error) => {
+			alert("Error while changing account type, please try again.");
+			console.error("Error writing document: ", error);
+		  }); 
+		});
 	
 	changePassword.addEventListener('click', e => {
         if(newPassword.value == confirmNewPassword.value){
@@ -53,6 +72,7 @@ var logoutFlag = false;
     //add realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
+			fUserID = firebaseUser.uid;
 			console.log(firebaseUser);
 			console.log(firebaseUser.uid);
 			//window.location.href = "accountMainPageAfterSignIn.html";
