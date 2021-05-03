@@ -1,4 +1,5 @@
 var logoutFlag = false;
+var accountType;
 (function() {
 	console.log("loaded createServiceEvent script");
 	const firebaseConfig = {
@@ -37,6 +38,15 @@ var logoutFlag = false;
 	//add realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
+			const db = firebase.firestore();
+  			db.collection("users").doc(firebaseUser.uid).get().then((doc) => {
+    			accountType = doc.get("accountType");
+				if(accountType == "volunteer"){
+					window.location = "accountMainPageAfterSignIn.html";
+				}
+				console.log("Inside");
+				console.log(accountType);
+			});
 			//signup event
 			btnCreateACanvassEvent.addEventListener('click', e => {
 				// Add a new document in collection "users"
