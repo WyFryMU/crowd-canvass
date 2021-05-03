@@ -7,27 +7,6 @@ var markersArray = [];
 var eventInfo = [];
 var eventIDs = [];
 var firebaseUser;
-const contentString =
-'<div id="content">' +
-'<div id="siteNotice">' +
-"</div>" +
-'<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-'<div id="bodyContent">' +
-"<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
-"sandstone rock formation in the southern part of the " +
-"Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-"south west of the nearest large town, Alice Springs; 450&#160;km " +
-"(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-"features of the Uluru - Kata Tjuta National Park. Uluru is " +
-"sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-"Aboriginal people of the area. It has many springs, waterholes, " +
-"rock caves and ancient paintings. Uluru is listed as a World " +
-"Heritage Site.</p>" +
-'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-"https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-"(last visited June 22, 2009).</p>" +
-"</div>" +
-"</div>";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAgEK90feSQbkemjfXMCWwTh-Mid7lAq1Y",
@@ -62,6 +41,9 @@ function initMap() {
             position: pos,
             map,
             title: "Current Location",
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            }
           });
           
         },
@@ -86,21 +68,6 @@ function initMap() {
     infoWindow.open(map);
   }
   // Marker with text on click
-  const chicago = { lat: 41.881, lng: -87.623 };
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-    const marker = new google.maps.Marker({
-      position: chicago,
-      map,
-      title: "Chicago",
-    });
-    marker.addListener("click", () => {
-      infowindow.open(map, marker);
-    });
-    //console.log("marker");
-    //console.log(marker);
     //Geocode 
     const geocoder = new google.maps.Geocoder();
     //adding events to map
@@ -231,6 +198,22 @@ function populateMap(geocoder, resultsMap) {
             latitude: lat,
             longitude: long
         });
+        const eventTitle = doc.get("eventTitle");
+        const des = doc.get("des");
+        console.log(des);
+        const amountPaid = doc.get("amountPaid");
+        const route1Addresses = doc.get("route1Addresses");
+        const contentString =
+        '<div id="content">' +
+        '<div id="siteNotice">' +
+        "</div>" +
+        '<h1 id="firstHeading" class="firstHeading">'+ eventTitle + '</h1>' +
+        '<div id="bodyContent">' +
+        "<p> Event Description: "+ des + "</p>" +
+        "<p> Amount Paid: "+ amountPaid + "</p>" +
+        "<p> Address: "+route1Addresses+"</p>" +
+        "</div>" +
+        "</div>";
         marker.infoWindow = new google.maps.InfoWindow({
           content: contentString
         });
@@ -259,6 +242,22 @@ function populateMap(geocoder, resultsMap) {
               latitude: lat,
               longitude: long
             });
+            const eventTitle = doc.get("eventTitle");
+            const des = doc.get("des");
+            console.log(des);
+            const amountPaid = doc.get("amountPaid");
+            const route1Addresses = doc.get("route1Addresses");
+            const contentString =
+            '<div id="content">' +
+            '<div id="siteNotice">' +
+            "</div>" +
+            '<h1 id="firstHeading" class="firstHeading">'+ eventTitle + '</h1>' +
+            '<div id="bodyContent">' +
+            "<p> Event Description: "+ des + "</p>" +
+            "<p> Amount Paid: "+ amountPaid + "</p>" +
+            "<p> Address: "+route1Addresses+"</p>" +
+            "</div>" +
+            "</div>";
             marker.infoWindow = new google.maps.InfoWindow({
               content: contentString
             });

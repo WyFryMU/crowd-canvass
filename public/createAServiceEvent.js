@@ -12,13 +12,11 @@
 		
 	firebase.initializeApp(firebaseConfig);
 	//get elements
-	const radioHourly = document.getElementById("hourly");
-	const radioService = document.getElementById("service");
+	const eventTitle = document.getElementById("eventTitle");
+	const des = document.getElementById("des");
 	const amountPaid = document.getElementById("amountPaid");
-	const routesCanvassed = document.getElementById("routesCanvassed");
 	const route1Addresses = document.getElementById("route1Addresses");
-	const route2Addresses = document.getElementById("route2Addresses");
-	const route3Addresses = document.getElementById("route3Addresses");
+	const formLink = document.getElementById("formLink");
 
 	//var user = firebase.auth().currentUser;
 	//console.log(user);
@@ -42,13 +40,11 @@
 			// Add a new document in collection "users"
 			firebase.firestore().collection("serviceEvents").add({
 				userID: firebaseUser.uid,
+				eventTitle: eventTitle.value,
+				des: des.value,
 				amountPaid: amountPaid.value,
-				routesCanvassed: routesCanvassed.value,
 				route1Addresses: route1Addresses.value,
-				route2Addresses: route2Addresses.value,
-				route3Addresses: route3Addresses.value,
-				radioHourly: radioHourly.checked,
-				radioService: radioService.checked
+				formLink: formLink.value,
 			})
 			.then(() => {
 				console.log("Document successfully written!");
