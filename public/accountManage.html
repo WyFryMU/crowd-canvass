@@ -101,10 +101,10 @@
               <div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
-                    <li><a href="accountMainPageAfterSignin.html#main_home" style="color: white;">Home</a></li> <!--Need to Reset the links and menu option-->
-                    <li><a href="accountMainPageAfterSignin.html#main_finance" style="color:white;">Finance </a></li>
-                    <li><a href="accountMainPageAfterSignin.html#main_analysis" style="color: white;">Analysis  </a></li>
-                    <li><a href="accountMainPageAfterSignin.html#main_contact" style="color: white">Contact Us</a></li>
+                    <li><a href="accountMainPageAfterSignIn.html#main_home" style="color: white;">Home</a></li> <!--Need to Reset the links and menu option-->
+                    <li><a href="accountMainPageAfterSignIn.html#main_finance" style="color:white;">Finance </a></li>
+                    <li><a href="accountMainPageAfterSignIn.html#main_analysis" style="color: white;">Analysis  </a></li>
+                    <li><a href="accountMainPageAfterSignIn.html#main_contact" style="color: white">Contact Us</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" style="color: black;" id="account" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Account</a>
@@ -130,10 +130,11 @@
                     <!--Insert the form, update new form later, or new format to the page-->
                     <h3>Account Management</h3>
                     <p style="width: 90%;">
-                        <div class="form-group">
+                      <!--This is takiing input, this needs to switch to the information stored within the database-->
+                        <!--<div class="form-group">
                             <label class="control-label col-sm-3" for = "accountUsername">Account Username:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id = "accountUsername"> <!--This is takiing input, this needs to switch to the information stored within the database-->
+                                <input type="text" class="form-control" id = "accountUsername"> 
                             </div>
                         </div>
                         <br>
@@ -145,11 +146,27 @@
                             </div>
                         </div>
                         <br>
+                        <br>-->
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="oldpassword">Old Password:</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="oldpassword">
+                            </div>
+                        </div>
+                        <br>
                         <br>
                         <div class="form-group">
-                            <label class="control-label col-sm-3" for="password">Password:</label>
+                            <label class="control-label col-sm-3" for="newPassword">New Password:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="password">
+                                <input type="password" class="form-control" id="newPassword">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="confirmNewPassword">Confirm New Password:</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="confirmNewPassword">
                             </div>
                         </div>
                         <br>
@@ -157,10 +174,10 @@
                         <br>
                         <label class="col-sm-3">Account Type:</label>
                         <div class="col-sm-9">
-                            <p>[type of account stored]</p>
+                            <!--<p>[type of account stored]</p>-->
                         </div>
                         <label id="changeAccount">Change Account to:</label>
-                        <select class="button" id="type">
+                        <select class="button" id="changeType">
                             <option value="organizer">Organizer</option>
                             <option value="volunteer">Volunteer</option>
                         </select>
@@ -214,6 +231,7 @@
         
         <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 		<script src="accountManage.js"></script>
     </body>
     </html>
