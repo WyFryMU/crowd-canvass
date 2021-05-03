@@ -215,10 +215,10 @@
         <br>
         <div class="row">
           <div class="col-sm-6">
-            <a class="button" href="createAServiceEvent.html">Create a Community Event</a>
+            <a class="button" href="createAServiceEvent.html" onclick="return organizerOnly();">Create a Community Event</a>
           </div>
           <div class="col-sm-6">
-            <a class="button" href="createACanvassEvent.html">Create a Canvass Event</a>
+            <a class="button" href="createACanvassEvent.html" onclick="return organizerOnly();">Create a Canvass Event</a>
           </div>
         </div>
         <!--Add the button to view events within your area-->
@@ -320,7 +320,7 @@
           <li><a style="color: black;" href="accountMainPageAfterSignIn.html#main_analysis">Analysis Pages</a></li>
         </div>
         <div class="col-sm-2">
-          <li><a style="color: black;" href="createACanvassEvent.html">Create An Event Pages</a></li>
+          <li><a style="color: black;" href="createACanvassEvent.html" onclick="return organizerOnly();">Create An Event Pages</a></li>
         </div>
         <div class="col-sm-2">
           <li><a style="color: black;" href="accountMainPageAfterSignIn.html#main_contact">About Us page</a></li>
@@ -335,6 +335,7 @@
 
 	  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 		<script src="accountMainPageAfterSignIn.js"></script>
 	
 </body>

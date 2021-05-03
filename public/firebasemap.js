@@ -151,6 +151,8 @@ function initMap() {
           //add listeners to sign up buttons
           cell1.addEventListener('click', e => {
             console.log("path");
+            
+            console.log(e);
             console.log(e.path[1].id);
             console.log("eventId");
             console.log(eventIDs[e.path[1].id]);

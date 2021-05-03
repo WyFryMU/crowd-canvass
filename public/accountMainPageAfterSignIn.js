@@ -1,4 +1,6 @@
+var accountType;
 (function() {
+	
 	console.log("loaded signup script");
 	const firebaseConfig = {
 		apiKey: "AIzaSyAgEK90feSQbkemjfXMCWwTh-Mid7lAq1Y",
@@ -17,17 +19,39 @@
 	//logout event
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
-		window.location = "index.html";
+		//window.location = "index.html";
 	});
 	
 	//add realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			console.log(firebaseUser);
+
 			console.log(firebaseUser.uid);
+			const db = firebase.firestore();
+  			db.collection("users").doc(firebaseUser.uid).get().then((doc) => {
+    			accountType = doc.get("accountType");
+				console.log("Inside");
+				console.log(accountType);
+			});
 			//window.location.href = "accountMainPageAfterSignIn.html";
 		}else{
 			console.log("not logged in");
+			window.location = "index.html";
 		}
 	});
 }());
+setTimeout( function(){
+	console.log("Outside");
+	console.log(accountType);
+} ,2000);
+
+function organizerOnly(){
+	if(accountType == "organizer"){
+		return true;
+	}
+	else{
+		alert("You do not have the right account type to view this page.")
+		return false;
+	}
+}
