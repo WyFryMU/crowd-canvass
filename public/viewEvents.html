@@ -86,7 +86,7 @@
                         <p>Hello [Username].</p>
                         <p>Would you like to:</p>
                         <li><a href="accountManage.html" id="account" class="button">Manage Account</a></li>
-                        <li><a href="#" class="button" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        <li><a class="button" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
                     </li> <!--Need to update ID once new webpage is made-->
                   </ul>
@@ -100,9 +100,14 @@
             <div class="col-sm-10">
                 <div class="box well well-sm" style="width: 100%; height: fit-content;">
                     Events I signed up for
+                    <table id='eventList' style="border: 1px solid black"></table>
                 </div>
             </div>
             <div class="col-sm-1"></div>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+        <script src = "viewEvents.js"></script>
     </body>
 </html>
