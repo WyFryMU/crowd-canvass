@@ -24,6 +24,11 @@
 		const email = txtEmail.value;
 		const pass = txtPassword.value;
 		const auth = firebase.auth();
+		if(email == ""){
+			alert("Please enter your email.");
+		}else if(pass == ""){
+			alert("Please enter your password.");
+		}
 		//sign in
 		const promise = auth.signInWithEmailAndPassword(email,pass);
 		promise.catch(e => console.log(e.message));
