@@ -1,4 +1,5 @@
 var accountType;
+var logoutFlag = false;
 (function() {
 	
 	console.log("loaded signup script");
@@ -18,6 +19,7 @@ var accountType;
 	
 	//logout event
 	logout.addEventListener('click', e => {
+		logoutFlag = true;
 		firebase.auth().signOut();
 		//window.location = "index.html";
 	});
@@ -36,8 +38,11 @@ var accountType;
 			});
 			//window.location.href = "accountMainPageAfterSignIn.html";
 		}else{
-			console.log("not logged in");
-			window.location = "index.html";
+			if(logoutFlag){
+				window.location = "index.html";
+			}else{
+				window.location = "signUpsignIn.html";	
+			}
 		}
 	});
 }());

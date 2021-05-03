@@ -1,3 +1,4 @@
+var logoutFlag = false;
 (function() {
 	console.log("loaded createCanvassEvent script");
 	const firebaseConfig = {
@@ -29,8 +30,9 @@
 	
 	//logout event
 	logout.addEventListener('click', e => {
+		logoutFlag = true;
 		firebase.auth().signOut();
-		window.location = "index.html";
+		//window.location = "index.html";
 	});
 
 	//add realtime listener
@@ -39,23 +41,30 @@
 			//signup event
 			btnCreateACanvassEvent.addEventListener('click', e => {
 			// Add a new document in collection "users"
-			firebase.firestore().collection("canvassEvents").add({
-				userID: firebaseUser.uid,
-				eventTitle: eventTitle.value,
-				des: des.value,
-				amountPaid: amountPaid.value,
-				route1Addresses: route1Addresses.value,
-				formLink: formLink.value,
-			})
-			.then(() => {
-				console.log("Document successfully written!");
-				window.location = "accountMainPageAfterSignIn.html";
-			})
-			.catch((error) => {
-				console.error("Error writing document: ", error);
-			});
+				firebase.firestore().collection("canvassEvents").add({
+					userID: firebaseUser.uid,
+					eventTitle: eventTitle.value,
+					des: des.value,
+					amountPaid: amountPaid.value,
+					route1Addresses: route1Addresses.value,
+					formLink: formLink.value,
+				})
+				.then(() => {
+					console.log("Document successfully written!");
+					alert("Event created.");
+					window.location = "accountMainPageAfterSignIn.html";
+				})
+				.catch((error) => {
+					console.error("Error writing document: ", error);
+					alert(error);
+				});
 			});
 		}else{
+			if(logoutFlag){
+				window.location = "index.html";
+			}else{
+				window.location = "signUpsignIn.html";	
+			}
 			console.log("No one is logged in");
 			//alert("Please sign in.");
 			//window.location = "signUpsignIn.html";
