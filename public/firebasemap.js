@@ -101,19 +101,19 @@ function initMap() {
 		    var row = table.insertRow(rowCount);
 
         var cell1 = row.insertCell(0);
-        cell1.appendChild(document.createTextNode("Address"));
+        cell1.appendChild(document.createTextNode("Event Title"));
         cell1.style.border = "1px solid black";
         cell1.style.padding = "5px";
         var cell1 = row.insertCell(1);
-        cell1.appendChild(document.createTextNode("Amount Paid"));
+        cell1.appendChild(document.createTextNode("Description"));
         cell1.style.border = "1px solid black";
         cell1.style.padding = "5px";
         var cell1 = row.insertCell(2);
-        cell1.appendChild(document.createTextNode("Hourly Rate"));
+        cell1.appendChild(document.createTextNode("Amount Paid"));
         cell1.style.border = "1px solid black";
         cell1.style.padding = "5px";
         var cell1 = row.insertCell(3);
-        cell1.appendChild(document.createTextNode("Flat Rate"));
+        cell1.appendChild(document.createTextNode("Address"));
         cell1.style.border = "1px solid black";
         cell1.style.padding = "5px";
 
@@ -125,19 +125,19 @@ function initMap() {
           var row = table.insertRow(rowCount);
   
           var cell1 = row.insertCell(0);
-          cell1.appendChild(document.createTextNode(eventInfo[i].route1Addresses));
+          cell1.appendChild(document.createTextNode(eventInfo[i].eventTitle));
           cell1.style.border = "1px solid black";
           cell1.style.padding = "5px";
           var cell1 = row.insertCell(1);
-          cell1.appendChild(document.createTextNode(eventInfo[i].amountPaid));
+          cell1.appendChild(document.createTextNode(eventInfo[i].des));
           cell1.style.border = "1px solid black";
           cell1.style.padding = "5px";
           var cell1 = row.insertCell(2);
-          cell1.appendChild(document.createTextNode(eventInfo[i].radioHourly));
+          cell1.appendChild(document.createTextNode("$" + eventInfo[i].amountPaid));
           cell1.style.border = "1px solid black";
           cell1.style.padding = "5px";
           var cell1 = row.insertCell(3);
-          cell1.appendChild(document.createTextNode(eventInfo[i].radioService));
+          cell1.appendChild(document.createTextNode(eventInfo[i].route1Addresses));
           cell1.style.border = "1px solid black";
           cell1.style.padding = "5px";
           var cell1 = row.insertCell(4);
@@ -159,10 +159,12 @@ function initMap() {
               //signedUpFor: eventIDs[e.path[1].id]
             })
             .then(() => {
+              alert("You have sucessfully signed up.");
               console.log("Document successfully written!");
               //window.location = "accountMainPageAfterSignIn.html";
             })
             .catch((error) => {
+              alert("Error while signing up, please try again.");
               console.error("Error writing document: ", error);
             });  
           });
