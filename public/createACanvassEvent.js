@@ -47,7 +47,7 @@ var logoutFlag = false;
 					des: des.value,
 					amountPaid: amountPaid.value,
 					route1Addresses: route1Addresses.value,
-					formLink: formLink.value,
+					formLink: formLink.value
 				})
 				.then(() => {
 					console.log("Document successfully written!");
